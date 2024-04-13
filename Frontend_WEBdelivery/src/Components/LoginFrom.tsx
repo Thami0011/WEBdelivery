@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [error,setError]=useState("");
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,15 +17,21 @@ function LoginForm() {
         {
           username,
           password,
+          
         }
       );
 
-      console.log("Login successful:", response.data);
-      // Handle successful login (e.g., redirect to another page or store token)
-    } catch (error) {
-      console.error("Login failed:", error);
-      // Handle login failure
+      if (response.status === 200)
+         {
+       
+          navigate("/");
+      }
     }
+     catch (error) 
+     {
+      
+      setError("Invalid credentials. Please try again.");
+    }
   };
 
   return (
