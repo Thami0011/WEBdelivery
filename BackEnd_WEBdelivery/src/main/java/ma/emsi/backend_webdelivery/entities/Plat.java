@@ -1,0 +1,26 @@
+package ma.emsi.backend_webdelivery.entities;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@NoArgsConstructor
+@Data
+@AllArgsConstructor
+public class Plat
+
+{
+    @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    private Long id ;
+    private String nom ;
+    private int quantite ;
+
+    private String photo ;
+    private double prix ;
+    @ManyToOne
+    private Menu menu;
+
+}

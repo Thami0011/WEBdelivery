@@ -17,24 +17,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
 
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="#">
-        WEB Delivery
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 function LoginForm() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -60,7 +42,7 @@ function LoginForm() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme}> {/* Ajout du ThemeProvider ici */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -131,9 +113,8 @@ function LoginForm() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
+    </ThemeProvider> 
   );
 }
 
