@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/PlatRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/PlatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/BackEndWeBdeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/BackEndWeBdeliveryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Plat.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Plat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/ForgotPasswordRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/MenuRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/ForgotPasswordService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/session/SessionConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/ForgotasswordController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/TextGenerateEffect.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="Menu&amp;Plat" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +67,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -120,11 +100,35 @@
       <workItem from="1713468094915" duration="1508000" />
       <workItem from="1713548470254" duration="390000" />
       <workItem from="1713640899256" duration="2266000" />
-      <workItem from="1713728602454" duration="4480000" />
+      <workItem from="1713728602454" duration="4885000" />
     </task>
+    <task id="LOCAL-00001" summary="Menu&amp;Plat">
+      <option name="closed" value="true" />
+      <created>1713733258954</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713733258954</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Menu&amp;Plat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu&amp;Plat" />
   </component>
 </project>
