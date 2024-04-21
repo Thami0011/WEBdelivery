@@ -4,7 +4,7 @@ import { TextGenerateEffect } from '../Components/TextGenerateEffect'
 const Home = () => {
   return (
     <div>
-      <TextGenerateEffect words='Hello world '/>
+      <TextGenerateEffect words=''/>
     </div>
   )
 }

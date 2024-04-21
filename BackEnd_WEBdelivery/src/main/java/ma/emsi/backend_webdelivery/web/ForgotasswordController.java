@@ -2,11 +2,9 @@ package ma.emsi.backend_webdelivery.web;
 
 import ma.emsi.backend_webdelivery.service.ForgotPasswordService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:5173/")
 @RestController
 public class ForgotasswordController {
     @Autowired
@@ -17,7 +15,7 @@ public class ForgotasswordController {
         String response = service.forgotPass(email);
 
         if(!response.startsWith("Invalid")){
-            response= "http://localhost:8080/reset-password?token=" + response;
+            response= "http://localhost:8085/reset-password?token=" + response;
         }
         return response;
     }

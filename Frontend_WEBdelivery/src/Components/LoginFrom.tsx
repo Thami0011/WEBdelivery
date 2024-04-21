@@ -34,6 +34,8 @@ function LoginForm() {
       });
 
       if (response.status === 200) {
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("nom", response.data.nom);
         navigate("/");
       }
     } catch (error) {
