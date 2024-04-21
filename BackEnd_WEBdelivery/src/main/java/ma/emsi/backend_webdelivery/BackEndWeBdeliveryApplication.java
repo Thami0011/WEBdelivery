@@ -18,15 +18,18 @@ import java.util.List;
 @SpringBootApplication
 public class BackEndWeBdeliveryApplication implements CommandLineRunner {
 	@Autowired
-	private PlatRepository platRepository;
+	private MenuRepository menuRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(BackEndWeBdeliveryApplication.class, args);
+
+
 	}
 
 	@Override
 	public void run(String... args) throws Exception
 	{
-		platRepository.save(new Plat("null,""))
+
+		System.out.println(menuRepository.findMenuByNom("Burgers").getPlats().toString());
 
 	}
 }

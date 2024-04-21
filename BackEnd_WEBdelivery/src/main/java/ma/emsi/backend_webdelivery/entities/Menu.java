@@ -18,7 +18,7 @@ public class Menu {
     private String nom;
     private String description;
     private String photo;
-    @OneToMany(mappedBy = "menu")
+    @OneToMany(mappedBy = "menu", fetch=FetchType.EAGER)
     private List<Plat> plats;
 }
 

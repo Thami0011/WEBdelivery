@@ -16,10 +16,17 @@ public class Plat
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id ;
     private String nom ;
-    private int quantite ;
     private String photo ;
     private double prix ;
     @ManyToOne
     private Menu menu;
-
+    @Override
+    public String toString() {
+        return "Plat{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", photo='" + photo + '\'' +
+                ", prix=" + prix +
+                '}';
+    }
 }
