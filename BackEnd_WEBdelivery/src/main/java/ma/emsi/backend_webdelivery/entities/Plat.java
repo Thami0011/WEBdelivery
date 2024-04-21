@@ -17,7 +17,6 @@ public class Plat
     private Long id ;
     private String nom ;
     private int quantite ;
-
     private String photo ;
     private double prix ;
     @ManyToOne

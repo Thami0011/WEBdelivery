@@ -22,9 +22,7 @@ public class Client {
     private String telephone;
     private String sexe;
     private String Adresse;
-    private String token;
-    @Column(columnDefinition = "TIMESTAMP")
-    private LocalDateTime tokenCreationDate;
+
 
 
 

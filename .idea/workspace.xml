@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="" />
+    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/PlatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/PlatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/BackEndWeBdeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/BackEndWeBdeliveryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Plat.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Plat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/ForgotPasswordRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/MenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/ForgotPasswordService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/session/SessionConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/ForgotasswordController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/TextGenerateEffect.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -37,6 +58,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -45,27 +69,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BackEndWeBdeliveryApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/auth/register&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/IdeaProjects/WEBdelivery&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BackEndWeBdeliveryApplication.executor": "Run",
+    "git-widget-placeholder": "dev/auth/register",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projects/IdeaProjects/GestionProduit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BackEndWeBdeliveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="BackEnd_WEBdelivery" />
@@ -92,7 +117,10 @@
       <updated>1713010356799</updated>
       <workItem from="1713010357600" duration="10114000" />
       <workItem from="1713386655739" duration="2338000" />
-      <workItem from="1713468094915" duration="365000" />
+      <workItem from="1713468094915" duration="1508000" />
+      <workItem from="1713548470254" duration="390000" />
+      <workItem from="1713640899256" duration="2266000" />
+      <workItem from="1713728602454" duration="4480000" />
     </task>
     <servers />
   </component>
