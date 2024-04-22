@@ -1,10 +1,14 @@
-import React from 'react';
-import Hero from '../Components/Hero';
+import React from "react";
+import PageTitle from "../Components/Hero";
+import { ChakraProvider } from "@chakra-ui/react";
+
 
 const Home = () => {
   return (
-    <Hero/>
+    <ChakraProvider>
+      <PageTitle />
+    </ChakraProvider>
   );
-}
+};
 
 export default Home;

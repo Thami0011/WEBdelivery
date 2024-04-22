@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+import MultiActionAreaCard from "../Components/MultiActionAreaCard";
 
 function Menu() {
   return (
-    
-    <div>
-        Menu 
-    </div>
+    <MultiActionAreaCard title="Hello" description="Desscription" image="" />
   );
 }
 

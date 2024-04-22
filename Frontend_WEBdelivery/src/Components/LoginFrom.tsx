@@ -46,7 +46,9 @@ function LoginForm() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}> {/* Ajout du ThemeProvider ici */}
+    <ThemeProvider theme={defaultTheme}>
+      {" "}
+      {/* Ajout du ThemeProvider ici */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -118,7 +120,7 @@ function LoginForm() {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider> 
+    </ThemeProvider>
   );
 }
 
