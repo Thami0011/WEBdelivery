@@ -1,5 +1,6 @@
 package ma.emsi.backend_webdelivery.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class Menu {
     private String description;
     private String photo;
     @OneToMany(mappedBy = "menu", fetch=FetchType.EAGER)
+    @JsonBackReference
     private List<Plat> plats;
 }
 
