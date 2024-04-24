@@ -21,15 +21,11 @@ public class BackEndWeBdeliveryApplication implements CommandLineRunner {
 	private MenuRepository menuRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(BackEndWeBdeliveryApplication.class, args);
-
-
 	}
 
 	@Override
 	public void run(String... args) throws Exception
 	{
-
-		System.out.println(menuRepository.findMenuByNom("Burgers").getPlats().toString());
 
 	}
 }
