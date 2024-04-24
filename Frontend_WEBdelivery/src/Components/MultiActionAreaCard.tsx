@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 
 interface MultiActionAreaCardProps {
   title: string;
@@ -19,7 +19,11 @@ const MultiActionAreaCard: React.FC<MultiActionAreaCardProps> = ({
 }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea
+        onClick={() => {
+          window.location.href ="/Plat/" +  title ;
+        }}
+      >
         <CardMedia component="img" height="140" image={image} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
