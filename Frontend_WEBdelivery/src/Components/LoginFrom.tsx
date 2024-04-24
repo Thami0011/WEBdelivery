@@ -38,7 +38,7 @@ function LoginForm() {
         localStorage.setItem("nom", response.data.nom);
         localStorage.setItem("Prenom", response.data.prenom);
 
-        navigate("/");
+        navigate("/menu");
       }
     } catch (error) {
       setError("Invalid credentials. Please try again.");
