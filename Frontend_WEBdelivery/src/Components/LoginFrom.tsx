@@ -20,6 +20,7 @@ const defaultTheme = createTheme();
 function LoginForm() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,9 +35,11 @@ function LoginForm() {
       });
 
       if (response.status === 200) {
-        localStorage.setItem("username", response.data.username);
-        localStorage.setItem("nom", response.data.nom);
-        localStorage.setItem("Prenom", response.data.prenom);
+        sessionStorage.setItem("username", response.data.username);
+        sessionStorage.setItem("nom", response.data.nom);
+        sessionStorage.setItem("Prenom", response.data.prenom);
+
+        setUsername(response.data.username);
 
         navigate("/menu");
       }
@@ -47,8 +50,6 @@ function LoginForm() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      {" "}
-      {/* Ajout du ThemeProvider ici */}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box

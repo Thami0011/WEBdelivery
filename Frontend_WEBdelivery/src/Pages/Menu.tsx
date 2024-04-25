@@ -3,6 +3,7 @@ import axios from "axios";
 import MultiActionAreaCard from "../Components/MultiActionAreaCard";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 interface Menu {
   id: number;
@@ -13,6 +14,7 @@ interface Menu {
 
 function Menu() {
   const [menuItems, setMenuItems] = useState<Menu[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios

@@ -1,10 +1,11 @@
 import React from 'react'
+import PlatCard from '../Components/PlatCard'
 
 const Plat = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <PlatCard name='hello' description='desc' image='image' price='12'/>
+    </>
   )
 }
 

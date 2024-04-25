@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="Menu&amp;Plat" />
+    <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="gitignore">
+      <change afterPath="$PROJECT_DIR$/.idea/WEBDelivery.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/PlatCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Plat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/PlatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/repository/PlatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/AppBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/MultiActionAreaCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/MultiActionAreaCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Routes/Router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Routes/Router.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,10 +48,22 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Thami0011&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Thami0011/WEBdelivery.git&quot;,
+    &quot;accountId&quot;: &quot;93c20e96-3d02-4676-8c95-7c4767b74c8d&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -44,33 +74,38 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2f2s9DbOypvsM6RMuUanO9hHTrt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackEndWeBdeliveryApplication.executor": "Run",
-    "git-widget-placeholder": "dev/auth/register",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projects/IdeaProjects/GestionProduit",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackEndWeBdeliveryApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/auth/register&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/IdeaProjects/GestionProduit&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BackEndWeBdeliveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="BackEnd_WEBdelivery" />
@@ -83,7 +118,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -101,6 +137,11 @@
       <workItem from="1713548470254" duration="390000" />
       <workItem from="1713640899256" duration="2266000" />
       <workItem from="1713728602454" duration="4885000" />
+      <workItem from="1714006908637" duration="955000" />
+      <workItem from="1714038118093" duration="4923000" />
+      <workItem from="1714051235061" duration="918000" />
+      <workItem from="1714055021996" duration="1607000" />
+      <workItem from="1714059280987" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="Menu&amp;Plat">
       <option name="closed" value="true" />
@@ -110,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713733258954</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1714007170734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714007170734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +177,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Menu&amp;Plat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu&amp;Plat" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { PaletteMode } from "@mui/material";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -24,7 +24,22 @@ interface AppAppBarProps {
 }
 
 function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState<string | null>(
+    sessionStorage.getItem("username")
+  );
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setUsername(sessionStorage.getItem("username"));
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -32,6 +47,21 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
 
   const redirectToPage = (pageUrl: string) => {
     window.location.href = pageUrl;
+  };
+
+  const handleSignIn = () => {
+    // Logic for handling sign in
+    // After successful sign in, set the username in session storage
+    sessionStorage.setItem("username", "your_username_here");
+    // Update the username state
+    setUsername(sessionStorage.getItem("username"));
+  };
+
+  const handleSignOut = () => {
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("Prenom");
+    sessionStorage.removeItem("nom");
+    setUsername(null);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -93,7 +123,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
             >
               <a href="/">
                 <img
-                  src={"src/assets/icon.svg"}
+                  src={"src\\assets\\icon.svg"}
                   style={logoStyle}
                   alt="logo of sitemark"
                 />
@@ -121,7 +151,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
-                  Panier
+                    Panier
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -142,22 +172,40 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               }}
             >
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
-              <Button
-                color="primary"
-                variant="text"
-                size="small"
-                onClick={() => redirectToPage("/login")}
-              >
-                Sign in
-              </Button>
-              <Button
-                color="primary"
-                variant="contained"
-                size="small"
-                onClick={() => redirectToPage("/register")}
-              >
-                Sign up
-              </Button>
+              {username ? (
+                <>
+                  <Typography color={"black"}>
+                    Hello {sessionStorage.getItem("Prenom") + " " + sessionStorage.getItem("nom")}
+                  </Typography>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    size="small"
+                    onClick={handleSignOut}
+                  >
+                    Sign out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    size="small"
+                    onClick={() => redirectToPage("/login")}
+                  >
+                    Sign in
+                  </Button>
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    size="small"
+                    onClick={handleSignIn}
+                  >
+                    Sign up
+                  </Button>
+                </>
+              )}
             </Box>
             <Box sx={{ display: { sm: "", md: "none" } }}>
               <Button
@@ -207,26 +255,49 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     FAQ
                   </MenuItem>
                   <Divider />
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="contained"
-                      onClick={() => redirectToPage("/register")}
-                      sx={{ width: "100%" }}
-                    >
-                      Sign up
-                    </Button>
-                  </MenuItem>
-                  <MenuItem>
-                    <Button
-                      color="primary"
-                      variant="outlined"
-                      onClick={() => redirectToPage("/login")}
-                      sx={{ width: "100%" }}
-                    >
-                      Sign in
-                    </Button>
-                  </MenuItem>
+                  {username ? (
+                    <>
+                      <MenuItem>
+                      <Typography>
+  Hello {sessionStorage.getItem("Prenom") + " " + sessionStorage.getItem("nom")}
+</Typography>
+
+                      </MenuItem>
+                      <MenuItem>
+                        <Button
+                          color="primary"
+                          variant="outlined"
+                          onClick={handleSignOut}
+                          sx={{ width: "100%" }}
+                        >
+                          Sign out
+                        </Button>
+                      </MenuItem>
+                    </>
+                  ) : (
+                    <>
+                      <MenuItem>
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          onClick={() => redirectToPage("/register")}
+                          sx={{ width: "100%" }}
+                        >
+                          Sign up
+                        </Button>
+                      </MenuItem>
+                      <MenuItem>
+                        <Button
+                          color="primary"
+                          variant="outlined"
+                          onClick={() => redirectToPage("/login")}
+                          sx={{ width: "100%" }}
+                        >
+                          Sign in
+                        </Button>
+                      </MenuItem>
+                    </>
+                  )}
                 </Box>
               </Drawer>
             </Box>

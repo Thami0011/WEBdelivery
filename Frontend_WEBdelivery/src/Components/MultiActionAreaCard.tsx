@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface MultiActionAreaCardProps {
   title: string;
@@ -17,13 +18,13 @@ const MultiActionAreaCard: React.FC<MultiActionAreaCardProps> = ({
   description,
   image,
 }) => {
+  const navigate = useNavigate();
   return (
+    <div onClick={()=>
+      navigate("/Plat" + "?menu=" + title)
+      } >
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea
-        onClick={() => {
-          window.location.href ="/Plat/" +  title ;
-        }}
-      >
+      <CardActionArea>
         <CardMedia component="img" height="140" image={image} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -35,6 +36,7 @@ const MultiActionAreaCard: React.FC<MultiActionAreaCardProps> = ({
         </CardContent>
       </CardActionArea>
     </Card>
+    </div>
   );
 };
 
