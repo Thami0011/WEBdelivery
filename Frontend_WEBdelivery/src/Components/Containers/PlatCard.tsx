@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { ButtonBase } from '@mui/material';
 
 interface PlatCardProps {
   name: string;
@@ -27,7 +28,6 @@ const PlatCard: React.FC<PlatCardProps> = ({ name, description, price, image }) 
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        alt={name}
         height="140"
         image={image}
       />
@@ -40,7 +40,7 @@ const PlatCard: React.FC<PlatCardProps> = ({ name, description, price, image }) 
         </Typography>
       </CardContent>
       <CardActions>
-        <ShoppingCart01Icon>Share</ShoppingCart01Icon>
+        <Button><ShoppingCart01Icon/></Button>
         <Typography>{price}</Typography>
       </CardActions>
     </Card>

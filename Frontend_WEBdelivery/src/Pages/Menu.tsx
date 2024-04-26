@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MultiActionAreaCard from "../Components/MultiActionAreaCard";
+import MultiActionAreaCard from "../Components/Containers/MultiActionAreaCard";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +35,7 @@ function Menu() {
             <MultiActionAreaCard
               title={item.nom}
               description={item.description}
-              image={"src/assets/" + item.photo}
+              image={"src/assets/images/" + item.photo}
             />
           </Grid>
         ))}

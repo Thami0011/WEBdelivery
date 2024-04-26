@@ -20,8 +20,10 @@ const MultiActionAreaCard: React.FC<MultiActionAreaCardProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div onClick={()=>
+    <div onClick={()=>{
       navigate("/Plat" + "?menu=" + title)
+      localStorage.setItem("menu", title)
+    }
       } >
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
