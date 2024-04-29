@@ -1,25 +1,27 @@
 import React from "react";
 
-const ProductTable: React.FC = () => {
+
+const ProductTable: React.FC = () => 
+  {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-lg overflow-hidden">
+      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-16 py-3">
-              <span className="sr-only">Image</span>
+              <span className="sr-only">jj</span>
             </th>
-            <th scope="col" className="px-6 py-3">
-              Product
+            <th scope="col" className="px-20 py-3">
+              gg
             </th>
-            <th scope="col" className="px-6 py-3">
-              Qty
+            <th scope="col" className="px-20 py-3">
+              gg
             </th>
-            <th scope="col" className="px-6 py-3">
-              Price
+            <th scope="col" className="px-20 py-3"> 
+              gg
             </th>
-            <th scope="col" className="px-6 py-3">
-              Action
+            <th scope="col" className="px-20 py-3"> 
+              gg
             </th>
           </tr>
         </thead>
@@ -28,10 +30,10 @@ const ProductTable: React.FC = () => {
             <td className="p-4">
               <img src="/docs/images/products/apple-watch.png" className="w-16 md:w-32 max-w-full max-h-full" alt="Apple Watch" />
             </td>
-            <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+            <td className="px-20 py-4 font-semibold text-gray-900 dark:text-white"> 
               Apple Watch
             </td>
-            <td className="px-6 py-4">
+            <td className="px-20 py-4"> 
               <div className="flex items-center">
                 <button className="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
                   <span className="sr-only">Quantity button</span>
@@ -50,14 +52,14 @@ const ProductTable: React.FC = () => {
                 </button>
               </div>
             </td>
-            <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+            <td className="px-20 py-4 font-semibold text-gray-900 dark:text-white"> 
               $599
             </td>
-            <td className="px-6 py-4">
+            <td className="px-20 py-4"> 
               <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
             </td>
           </tr>
-          {/* Deux autres lignes de produit ici */}
+         
         </tbody>
       </table>
     </div>

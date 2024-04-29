@@ -5,7 +5,7 @@ import ProductTable from '../Components/ProductTable'
 const Panier = () => {
   return (
     <>
-    <BoxesCore/>
+    
     <ProductTable/>
     </>
   )

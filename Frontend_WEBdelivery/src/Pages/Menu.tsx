@@ -28,6 +28,7 @@ function Menu() {
   }, []);
 
   return (
+    
     <Box sx={{ maxWidth: "80%", marginLeft: "23vh", paddingTop: "10rem" }}>
       <Grid container spacing={9}>
         {menuItems.map((item) => (
