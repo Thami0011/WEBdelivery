@@ -27,14 +27,11 @@ const Plat = () =>
 
   useEffect(() => 
     {
-    
-      axios.get<Plat[]>(`http://localhost:8085/Plat?menu=${localStorage.getItem("menu")}`)
+        axios.get<Plat[]>(`http://localhost:8085/Plat?menu=${localStorage.getItem("menu")}`)
         .then((response) =>
            {
             setMenuItems(response.data);
-            localStorage.removeItem("menu");
-            
-        })
+           })
         .catch((error) =>
            {
           console.error("Error fetching menu items:", error);
@@ -43,14 +40,25 @@ const Plat = () =>
   }, [menuSelection]);
 
   const ajouterAuPanier = async (platId: number) => {
+    const username = sessionStorage.getItem("username") || "";
     try {
-      await axios.post("http://localhost:8085/AddPanier", platId );
+       // Récupérer le nom d'utilisateur depuis sessionStorage
+      await axios.post(
+        "http://localhost:8085/AddPanier",
+        { platId, username }, // Envoyer les données dans un objet
+        {
+          headers: {
+            'Content-Type': 'application/json' // En-tête spécifiant le type de contenu
+          }
+        }
+      );
       console.log("Plat ajouté au panier avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'ajout du plat au panier :", error);
+      console.log({platId,username});
     }
   };
-
+  
   return (
     <Box sx={{ maxWidth: "80%", margin: "auto", paddingTop: "10rem" }}>
       <Grid container spacing={3}>

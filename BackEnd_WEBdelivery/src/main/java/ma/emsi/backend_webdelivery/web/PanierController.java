@@ -21,10 +21,10 @@ public class PanierController {
     private PlatRepository platRepository;
 
     @PostMapping("/AddPanier")
-    public ResponseEntity<?> ajouterPanier(@RequestBody Long platId)
+    public ResponseEntity<?> ajouterPanier(@RequestBody Long platId,@RequestBody String username)
     {
         // clientRepository.findClientsByUsername(username).getPanier().add(platRepository.findPlatById(platId));
-        System.out.println(platId);
+        System.out.println(platId+username);
         return ResponseEntity.ok("Ajoute au Panier");
     }
 }
