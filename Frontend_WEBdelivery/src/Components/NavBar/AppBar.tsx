@@ -108,7 +108,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               borderColor: "divider",
               boxShadow:
                 theme.palette.mode === "light"
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
+                  ? "0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)"
                   : "0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)",
             })}
           >
@@ -139,7 +139,8 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("testimonials")}
+                onClick={() => redirectToPage("/Plat")}
+                  
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -147,7 +148,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => scrollToSection("highlights")}
+                 
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -200,7 +201,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     color="primary"
                     variant="contained"
                     size="small"
-                    onClick={handleSignIn}
+                    onClick={()=>redirectToPage('/register')}
                   >
                     Sign up
                   </Button>
@@ -240,64 +241,41 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     />
                   </Box>
                   <MenuItem onClick={() => scrollToSection("features")}>
-                    Features
+                    Menu
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("testimonials")}>
-                    Testimonials
+                    Plats
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("highlights")}>
-                    Highlights
+                    Panier
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("pricing")}>
-                    Pricing
+                    Contact
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("faq")}>
                     FAQ
                   </MenuItem>
                   <Divider />
-                  {username ? (
-                    <>
-                      <MenuItem>
-                      <Typography>
-  Hello {sessionStorage.getItem("Prenom") + " " + sessionStorage.getItem("nom")}
-</Typography>
-
-                      </MenuItem>
-                      <MenuItem>
-                        <Button
-                          color="primary"
-                          variant="outlined"
-                          onClick={handleSignOut}
-                          sx={{ width: "100%" }}
-                        >
-                          Sign out
-                        </Button>
-                      </MenuItem>
-                    </>
-                  ) : (
-                    <>
-                      <MenuItem>
-                        <Button
-                          color="primary"
-                          variant="contained"
-                          onClick={() => redirectToPage("/register")}
-                          sx={{ width: "100%" }}
-                        >
-                          Sign up
-                        </Button>
-                      </MenuItem>
-                      <MenuItem>
-                        <Button
-                          color="primary"
-                          variant="outlined"
-                          onClick={() => redirectToPage("/login")}
-                          sx={{ width: "100%" }}
-                        >
-                          Sign in
-                        </Button>
-                      </MenuItem>
-                    </>
-                  )}
+                  <MenuItem>
+                    <Button
+                      color="primary"
+                      variant="contained"
+                      onClick={() => redirectToPage("/register")}
+                      sx={{ width: "100%" }}
+                    >
+                      Sign up
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                      onClick={() => redirectToPage("/login")}
+                      sx={{ width: "100%" }}
+                    >
+                      Sign in
+                    </Button>
+                  </MenuItem>
                 </Box>
               </Drawer>
             </Box>

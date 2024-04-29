@@ -20,7 +20,8 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "chakra": "^0.0.3",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
+    "flowbite-react": "^0.9.0",
     "framer-motion": "^11.1.7",
     "leaflet": "^1.9.4",
     "mui": "^0.0.1",
@@ -29,10 +30,11 @@
     "react-icons": "^5.1.0",
     "react-router-dom": "^6.22.3",
     "sass": "^1.75.0",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.12",
+    "@types/node": "^20.12.7",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

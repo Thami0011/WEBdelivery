@@ -5,40 +5,52 @@ import MultiActionAreaCard from "../Components/Containers/MultiActionAreaCard";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import  Component from '../Components/platCard2';
 
-interface Plat {
-  name: string;
+interface Plat 
+{
+  nom: string;
   description: string;
-  price: number; 
-  image: string;
+  prix: number; 
+  photo: string;
   id:number;
 }
 
-interface MenuSelection {
+interface MenuSelection
+ {
   category: string;
 }
 
-const Plat = () => {
+const Plat = () =>
+   {
   const [menuItems, setMenuItems] = useState<Plat[]>([]);
   const [menuSelection, setMenuSelection] = useState<MenuSelection>({ category: "" });
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (menuSelection.category) {
+  useEffect(() => 
+    {
+    if (localStorage.getItem("menu")) 
+      {
       axios
-        .get<Plat[]>(`http://localhost:8085/Plat?menu=${menuSelection.category}`)
-        .then((response) => {
+        .get<Plat[]>(`http://localhost:8085/Plat`)
+        .then((response) => 
+          {
           setMenuItems(response.data);
         })
-        .catch((error) => {
+        .catch((error) =>
+          {
           console.error("Error fetching menu items:", error);
         });
     } else {
       axios.get<Plat[]>(`http://localhost:8085/Plat?menu=${localStorage.getItem("menu")}`)
-        .then((response) => {
-          setMenuItems(response.data);
+        .then((response) =>
+           {
+            setMenuItems(response.data);
+            localStorage.removeItem("menu");
+            
         })
-        .catch((error) => {
+        .catch((error) =>
+           {
           console.error("Error fetching menu items:", error);
         });
     }
@@ -47,15 +59,16 @@ const Plat = () => {
   return (
     <Box sx={{ maxWidth: "80%", margin: "auto", paddingTop: "10rem" }}>
       <Grid container spacing={3}>
-        {menuItems.map((item) => (
+        {menuItems.map((item) => 
+        (
+          
           <Grid item xs={12} sm={6} md={4} key={item.id}>
-            <PlatCard
-              name={item.nom}
-              description={item.description}
-              image={"src/assets/images/" + item.photo}
-              price={item.prix}
-
-            />
+           <Component
+           name={item.nom}
+           image={item.photo}
+           prix={item.prix}
+           id={item.id}
+           />
           </Grid>
         ))}
       </Grid>

@@ -5,34 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="gitignore">
-      <change afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/PanierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Containers/MultiActionAreaCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Containers/PlatCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Forms/ForgetPasswordForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Forms/LoginFrom.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Forms/RegisterForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar/AppBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar/NavBar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar/ToggleColorMode.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/java/ma/emsi/backend_webdelivery/web/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/AppBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/ForgetPasswordForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/LoginFrom.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/MultiActionAreaCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/PlatCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/RegisterForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/ToggleColorMode.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/ForgetPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/ForgetPassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Containers/PlatCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Containers/PlatCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar/AppBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/NavBar/AppBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Plat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Plat.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/assets/icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/assets/icon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +57,8 @@
     &quot;accountId&quot;: &quot;93c20e96-3d02-4676-8c95-7c4767b74c8d&quot;
   }
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -113,7 +95,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\IdeaProjects\\WEBdelivery\\Frontend_WEBdelivery\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -129,8 +111,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -156,6 +137,8 @@
       <workItem from="1714064020607" duration="2620000" />
       <workItem from="1714089976868" duration="2800000" />
       <workItem from="1714125197319" duration="285000" />
+      <workItem from="1714169885388" duration="1161000" />
+      <workItem from="1714304198905" duration="3081000" />
     </task>
     <task id="LOCAL-00001" summary="Menu&amp;Plat">
       <option name="closed" value="true" />

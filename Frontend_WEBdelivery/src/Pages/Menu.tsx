@@ -4,6 +4,7 @@ import MultiActionAreaCard from "../Components/Containers/MultiActionAreaCard";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import Cards from "../Components/animatedCards/Cards";
 
 interface Menu {
   id: number;
@@ -28,15 +29,13 @@ function Menu() {
   }, []);
 
   return (
-    <Box sx={{ maxWidth: "80%", margin: "auto", paddingTop: "10rem" }}>
-      <Grid container spacing={3}>
+    <Box sx={{ maxWidth: "80%", marginLeft: "23vh", paddingTop: "10rem" }}>
+      <Grid container spacing={9}>
         {menuItems.map((item) => (
-          <Grid item xs={12} sm={6} md={4} key={item.id}>
-            <MultiActionAreaCard
-              title={item.nom}
-              description={item.description}
-              image={"src/assets/images/" + item.photo}
-            />
+          <Grid item xs={12} md={4} key={item.id}>
+            <Cards name={item.nom}
+            description={item.description}
+            image={"src/assets/images/"+item.photo} />
           </Grid>
         ))}
       </Grid>
