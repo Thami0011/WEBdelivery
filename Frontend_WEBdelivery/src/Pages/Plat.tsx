@@ -39,23 +39,46 @@ const Plat = () =>
     
   }, [menuSelection]);
 
-  const ajouterAuPanier = async (platId: number) => {
-    const username = sessionStorage.getItem("username") || "";
+  const ajouterIdAuPanier = async (platId: number) => {
     try {
-       // Récupérer le nom d'utilisateur depuis sessionStorage
       await axios.post(
-        "http://localhost:8085/AddPanier",
-        { platId, username }, // Envoyer les données dans un objet
+        "http://localhost:8085/AddidPanier", platId, 
         {
           headers: {
-            'Content-Type': 'application/json' // En-tête spécifiant le type de contenu
+            'Content-Type': 'application/json' 
           }
         }
       );
       console.log("Plat ajouté au panier avec succès !");
     } catch (error) {
       console.error("Erreur lors de l'ajout du plat au panier :", error);
-      console.log({platId,username});
+      console.log({platId});
+    }
+  };
+
+  const ajouteruserAuPanier = async () => {
+    try {
+      await axios.post(
+        "http://localhost:8085/AdduserPanier", sessionStorage.getItem("username"), 
+        {
+          headers: {
+            'Content-Type': 'application/json' 
+          }
+        }
+      );
+      console.log("User ajouté au panier avec succès !");
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du plat au panier :", error);
+    }
+  };
+
+  const ajouterAuPanier = async () => {
+    try {
+      await axios.post(
+        "http://localhost:8085/ajouterPanier",  
+      );
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du plat au panier :", error);
     }
   };
   
@@ -67,14 +90,24 @@ const Plat = () =>
           
           <Grid item xs={12} sm={6} md={4} key={item.id}>
            <Component
-           name={item.nom}
-           image={item.photo}
-           prix={item.prix}
-           id={item.id}
-           onClick={() => {
-            ajouterAuPanier(item.id);
-          }}
-           />
+  name={item.nom}
+  image={item.photo}
+  prix={item.prix}
+  id={item.id}
+  onClick={() => {
+    const username = sessionStorage.getItem("username");
+    if (username) {
+      ajouterIdAuPanier(item.id);
+      ajouteruserAuPanier();
+      setTimeout(() => {
+        ajouterAuPanier();
+      }, 3000);
+    } else {
+      navigate("/login");
+    }
+  }}
+/>
+
           </Grid>
         ))}
       </Grid>

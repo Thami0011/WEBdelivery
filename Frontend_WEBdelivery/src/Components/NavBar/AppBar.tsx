@@ -140,7 +140,10 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                 </MenuItem>
                 
                 <MenuItem
-                 
+                 onClick={()=>{sessionStorage.getItem("username")?
+                  redirectToPage("/Panier"):
+                  redirectToPage("/login");
+                 }}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -236,7 +239,10 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     Menu
                   </MenuItem>
                   
-                  <MenuItem onClick={() => redirectToPage("/Panier")}>
+                  <MenuItem onClick={()=>{sessionStorage.getItem("username")?
+                  redirectToPage("/Panier"):
+                  redirectToPage("/login");
+                 }}>
                     Panier
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("pricing")}>
