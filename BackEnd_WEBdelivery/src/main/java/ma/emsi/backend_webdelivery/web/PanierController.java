@@ -2,12 +2,15 @@ package ma.emsi.backend_webdelivery.web;
 
 
 
+import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 import ma.emsi.backend_webdelivery.repository.PlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -43,9 +46,18 @@ public class PanierController {
         clientRepository.save(clientRepository.findClientsByUsername(username));
     }
 
-    @PostMapping("/Panier")
-    public ResponseEntity<?> Panier()
+    @GetMapping("/Panier")
+    public List<Plat> Panier()
     {
-        return new ResponseEntity<>(clientRepository.findClientsByUsername(s_username).getPanier(), HttpStatus.OK);
+        System.out.println(clientRepository.findClientsByUsername(s_username).getPanier());
+        return clientRepository.findClientsByUsername(s_username).getPanier();
+    }
+
+
+    @PostMapping("/supprimerPanier")
+    public void supprimerPanier(@RequestBody Long id) {
+        clientRepository.findClientsByUsername(s_username).getPanier().remove(platRepository.findPlatById(id));
+        clientRepository.save(clientRepository.findClientsByUsername(s_username));
+        System.out.println(id.toString() + "removed");
     }
 }
