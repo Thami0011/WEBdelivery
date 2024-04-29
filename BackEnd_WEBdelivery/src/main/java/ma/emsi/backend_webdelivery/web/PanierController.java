@@ -8,10 +8,8 @@ import ma.emsi.backend_webdelivery.repository.PlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173/")
@@ -22,10 +20,11 @@ public class PanierController {
     @Autowired
     private PlatRepository platRepository;
 
-    @PostMapping("/Panier")
-    public ResponseEntity<?> ajouterPanier(@RequestBody Plat plat, @RequestBody Client client)
+    @PostMapping("/AddPanier")
+    public ResponseEntity<?> ajouterPanier(@RequestBody Long platId)
     {
-        clientRepository.findClientsByUsername(client.getUsername()).getPanier().add(plat);
+        // clientRepository.findClientsByUsername(username).getPanier().add(platRepository.findPlatById(platId));
+        System.out.println(platId);
         return ResponseEntity.ok("Ajoute au Panier");
     }
 }

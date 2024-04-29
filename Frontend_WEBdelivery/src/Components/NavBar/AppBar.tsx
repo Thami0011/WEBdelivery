@@ -138,15 +138,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     Menu
                   </Typography>
                 </MenuItem>
-                <MenuItem
-                onClick={() => redirectToPage("/Plat")}
-                  
-                  sx={{ py: "6px", px: "12px" }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Repas
-                  </Typography>
-                </MenuItem>
+                
                 <MenuItem
                  
                   sx={{ py: "6px", px: "12px" }}
@@ -240,21 +232,17 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                       toggleColorMode={toggleColorMode}
                     />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection("features")}>
+                  <MenuItem onClick={() => redirectToPage("/Menu")}>
                     Menu
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("testimonials")}>
-                    Plats
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("highlights")}>
+                  
+                  <MenuItem onClick={() => redirectToPage("/Panier")}>
                     Panier
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("pricing")}>
                     Contact
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection("faq")}>
-                    FAQ
-                  </MenuItem>
+                  
                   <Divider />
                   <MenuItem>
                     <Button

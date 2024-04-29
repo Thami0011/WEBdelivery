@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
-import PlatCard from '../Components/Containers/PlatCard'
 import axios from "axios";
-import MultiActionAreaCard from "../Components/Containers/MultiActionAreaCard";
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
@@ -29,19 +27,7 @@ const Plat = () =>
 
   useEffect(() => 
     {
-    if (localStorage.getItem("menu")) 
-      {
-      axios
-        .get<Plat[]>(`http://localhost:8085/Plat`)
-        .then((response) => 
-          {
-          setMenuItems(response.data);
-        })
-        .catch((error) =>
-          {
-          console.error("Error fetching menu items:", error);
-        });
-    } else {
+    
       axios.get<Plat[]>(`http://localhost:8085/Plat?menu=${localStorage.getItem("menu")}`)
         .then((response) =>
            {
@@ -53,8 +39,17 @@ const Plat = () =>
            {
           console.error("Error fetching menu items:", error);
         });
-    }
+    
   }, [menuSelection]);
+
+  const ajouterAuPanier = async (platId: number) => {
+    try {
+      await axios.post("http://localhost:8085/AddPanier", platId );
+      console.log("Plat ajouté au panier avec succès !");
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du plat au panier :", error);
+    }
+  };
 
   return (
     <Box sx={{ maxWidth: "80%", margin: "auto", paddingTop: "10rem" }}>
@@ -68,6 +63,9 @@ const Plat = () =>
            image={item.photo}
            prix={item.prix}
            id={item.id}
+           onClick={() => {
+            ajouterAuPanier(item.id);
+          }}
            />
           </Grid>
         ))}

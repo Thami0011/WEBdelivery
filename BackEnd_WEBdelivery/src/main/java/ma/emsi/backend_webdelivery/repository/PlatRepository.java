@@ -8,4 +8,5 @@ import java.util.List;
 public interface PlatRepository extends JpaRepository<Plat,Long> {
     Plat findPlatByNom(String nom);
     List<Plat> findPlatsByMenuId(Long menuId);
+    Plat findPlatById(Long id);
 }
