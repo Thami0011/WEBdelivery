@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Router from "./Routes/Router";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 
 function App() {
   return (

@@ -17,27 +17,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
 
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="#">
-        WEB Delivery
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 function LoginForm() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -52,7 +35,13 @@ function LoginForm() {
       });
 
       if (response.status === 200) {
-        navigate("/");
+        sessionStorage.setItem("username", response.data.username);
+        sessionStorage.setItem("nom", response.data.nom);
+        sessionStorage.setItem("Prenom", response.data.prenom);
+
+        setUsername(response.data.username);
+
+        navigate("/menu");
       }
     } catch (error) {
       setError("Invalid credentials. Please try again.");
@@ -131,7 +120,6 @@ function LoginForm() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );

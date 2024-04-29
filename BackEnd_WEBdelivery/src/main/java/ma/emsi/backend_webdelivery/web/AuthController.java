@@ -1,14 +1,17 @@
 package ma.emsi.backend_webdelivery.web;
 
+import jakarta.servlet.http.HttpSession;
 import ma.emsi.backend_webdelivery.entities.Client;
-
+import java.util.*;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 
 import ma.emsi.backend_webdelivery.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173/")
@@ -18,6 +21,9 @@ public class AuthController {
     private ClientRepository clientRepository;
     @Autowired
     private ClientService clientService;
+
+
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Client user)
     {
@@ -46,6 +52,4 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
-
-
 }
