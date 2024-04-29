@@ -25,6 +25,8 @@ public class Client {
     private String Adresse;
     @OneToMany
     private List<Plat> Panier;
+    @OneToMany
+    private List<Commande> Historique;
 
 
 
