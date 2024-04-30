@@ -37,7 +37,7 @@ function LoginForm() {
       if (response.status === 200) {
         sessionStorage.setItem("username", response.data.username);
         sessionStorage.setItem("nom", response.data.nom);
-        sessionStorage.setItem("Prenom", response.data.prenom);
+        sessionStorage.setItem("Prenom", response.data.Prenom);
 
         setUsername(response.data.username);
 

@@ -20,15 +20,5 @@ public class Plat
     private double prix ;
     @ManyToOne
     private Menu menu;
-    @ManyToOne
-    private Commande commande;
-    @Override
-    public String toString() {
-        return "Plat{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", photo='" + photo + '\'' +
-                ", prix=" + prix +
-                '}';
-    }
+
 }

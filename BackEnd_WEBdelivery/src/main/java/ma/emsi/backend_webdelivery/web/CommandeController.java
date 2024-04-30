@@ -26,7 +26,7 @@ public class CommandeController
     {
         System.out.println(clientRepository.findClientsByUsername(username));
         System.out.println(username);
-        commandeService.CalculerPrix(username.replaceAll("\"", "").toString());
+        commandeService.CalculerPrix(username.replaceAll("\"", ""));
 
 
     }

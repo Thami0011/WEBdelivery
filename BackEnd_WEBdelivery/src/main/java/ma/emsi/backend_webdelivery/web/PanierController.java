@@ -18,8 +18,8 @@ import java.util.List;
 @Data
 @CrossOrigin(origins = "http://localhost:5173/")
 public class PanierController {
-     static Long s_id;
-     static String s_username;
+     public Long s_id;
+     public String s_username;
     @Autowired
     private ClientRepository clientRepository;
 

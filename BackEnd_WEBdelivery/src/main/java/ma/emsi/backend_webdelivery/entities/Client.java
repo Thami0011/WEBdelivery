@@ -26,7 +26,7 @@ public class Client
     private String Adresse;
     @OneToMany
     private List<Plat> Panier;
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany
     private List<Commande> historique;
 
 

@@ -37,7 +37,12 @@ public class CommandeService
         }
         Commande commande = new Commande();
         commande.setClient(client);
-        commande.setPanier(plats);
+        for (Plat plat : plats)
+        {
+            Plat plat1 = new Plat();
+            plat1 = plat;
+            commande.getPanier().add(plat1);
+        }
         commande.setPrixTotal(total);
         commande.setTraitee(false);
 

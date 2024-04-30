@@ -20,5 +20,4 @@ public class Livreur
     private String username;
     @OneToMany
     private List<Commande> HistoriqueCommande;
-
 }
