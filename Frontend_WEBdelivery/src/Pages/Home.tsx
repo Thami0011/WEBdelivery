@@ -15,14 +15,10 @@ const Home = () => {
   
   return (
     <>
-      <div className="h-screen flex justify-center items-center bg-cover bg-center" style={{backgroundImage: "url('src/assets/your/image.jpg')"}}>
-        <div className="w-full max-w-screen-xl">
-          <div className="flex flex-col justify-center items-center">
+      
             <TextGenerateEffect className="m-10" words="Bienvenue sur WebDelivery, votre destination en ligne pour des livraisons rapides et des saveurs délicieuses ! 🚀🍔 " />
             <MagicButton text="Explorer notre menu" onClick={handleClick} /> 
-          </div>
-        </div>
-      </div>
+          
     </>
   );
 };
