@@ -2,6 +2,7 @@ package ma.emsi.backend_webdelivery.web;
 
 
 
+import lombok.Data;
 import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 import ma.emsi.backend_webdelivery.repository.PlatRepository;
@@ -14,10 +15,11 @@ import java.util.List;
 
 
 @RestController
+@Data
 @CrossOrigin(origins = "http://localhost:5173/")
 public class PanierController {
-    private  Long s_id;
-    private  String s_username;
+     static Long s_id;
+     static String s_username;
     @Autowired
     private ClientRepository clientRepository;
 

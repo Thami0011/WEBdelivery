@@ -1,16 +1,28 @@
 import React from "react";
-import { AuroraBackground } from "../Components/background";
 import { TextGenerateEffect } from "../Components/Text";
-import Carousel from "../Components/carousel";
 import MagicButton from "../Components/magicButton"; 
-"use client";
-import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css';
+import { useNavigate } from "react-router-dom";
+
+
+
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/Menu");
+  };
+  
   return (
     <>
-      <TextGenerateEffect className="m-10" words="Bienvenue sur WebDelivery, votre destination en ligne pour des livraisons rapides et des saveurs délicieuses ! 🚀🍔 " />
-      <MagicButton /> 
+      <div className="h-screen flex justify-center items-center bg-cover bg-center" style={{backgroundImage: "url('src/assets/your/image.jpg')"}}>
+        <div className="w-full max-w-screen-xl">
+          <div className="flex flex-col justify-center items-center">
+            <TextGenerateEffect className="m-10" words="Bienvenue sur WebDelivery, votre destination en ligne pour des livraisons rapides et des saveurs délicieuses ! 🚀🍔 " />
+            <MagicButton text="Explorer notre menu" onClick={handleClick} /> 
+          </div>
+        </div>
+      </div>
     </>
   );
 };

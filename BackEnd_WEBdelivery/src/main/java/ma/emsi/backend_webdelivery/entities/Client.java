@@ -12,7 +12,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Client {
+public class Client
+{
     @Id @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long Id;
     private String username;
@@ -25,8 +26,9 @@ public class Client {
     private String Adresse;
     @OneToMany
     private List<Plat> Panier;
-    @OneToMany
-    private List<Commande> Historique;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private List<Commande> historique;
+
 
 
 

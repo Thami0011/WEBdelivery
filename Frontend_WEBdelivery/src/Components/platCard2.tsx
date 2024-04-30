@@ -11,8 +11,8 @@ interface Props {
 
 const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) => {
   return (
-    <Card className="max-w-xs" >
-      <div className="p-4">
+    <Card className="max-w-xs " >
+      <div className="p-4 ">
       <img
         src={`src/assets/images/${image}`}
         alt={name}
@@ -22,7 +22,7 @@ const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) => {
           {name}
         </h5>
         <div className="flex items-center justify-between">
-          <span className="text-xl black dark:text-white">${prix}</span>
+          <span className="text-xl black dark:white">${prix}</span>
           <button
             onClick={onClick}
             className="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none"

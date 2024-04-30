@@ -177,7 +177,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     color="primary"
                     variant="text"
                     size="small"
-                    onClick={handleSignOut}
+                    onClick={() => { handleSignOut(); redirectToPage("/"); }}
                   >
                     Sign out
                   </Button>
