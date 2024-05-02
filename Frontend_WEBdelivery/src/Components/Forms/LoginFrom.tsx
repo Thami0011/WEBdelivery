@@ -14,6 +14,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Console } from "console";
 
 const defaultTheme = createTheme();
 
@@ -35,9 +36,10 @@ function LoginForm() {
       });
 
       if (response.status === 200) {
+        console.log(response.data.prenom);
         sessionStorage.setItem("username", response.data.username);
         sessionStorage.setItem("nom", response.data.nom);
-        sessionStorage.setItem("Prenom", response.data.Prenom);
+        sessionStorage.setItem("Prenom", response.data.prenom);
 
         setUsername(response.data.username);
 
@@ -107,7 +109,6 @@ function LoginForm() {
             </Button>
 
             <Grid container>
-              
               <Grid item>
                 <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}

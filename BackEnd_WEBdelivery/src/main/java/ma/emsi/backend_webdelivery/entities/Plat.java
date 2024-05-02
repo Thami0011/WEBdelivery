@@ -20,5 +20,4 @@ public class Plat
     private double prix ;
     @ManyToOne
     private Menu menu;
-
 }

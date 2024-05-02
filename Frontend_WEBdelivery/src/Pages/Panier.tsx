@@ -11,7 +11,7 @@ const Panier = () => {
     try {
       // Ensure the content type is set to 'application/json' and the username is properly formatted as JSON
       const username = sessionStorage.getItem("username");
-      const response = await axios.post("http://localhost:8085/Commander", JSON.stringify(username), {
+      const response = await axios.post("http://localhost:8085/commander", JSON.stringify(username), {
         headers: {
           'Content-Type': 'application/json'
         }

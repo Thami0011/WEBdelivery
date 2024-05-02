@@ -6,22 +6,22 @@ interface Props {
   image: string;
   prix: number;
   id: number;
-  onClick : () => void;
+  onClick: () => void;
 }
 
 const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) => {
   return (
-    <Card className="max-w-xs " >
-      <div className="p-4 ">
-      <img
-        src={`src/assets/images/${image}`}
-        alt={name}
-        style={{ width: "100%", height: "200px", objectFit: "cover" }}
-      />
-        <h5 className="text-m font-semibold tracking-tight black dark:text-white mb-4">
+    <Card className="max-w-xs ">
+      <div className="p-4 flex flex-col items-center">
+        <img
+          src={`src/assets/images/${image}`}
+          alt={name}
+          className="w-full h-48 object-cover"
+        />
+        <h5 className="text-m font-semibold tracking-tight black dark:text-white my-4">
           {name}
         </h5>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <span className="text-xl black dark:white">${prix}</span>
           <button
             onClick={onClick}
@@ -44,7 +44,6 @@ const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) => {
           </button>
         </div>
       </div>
-     
     </Card>
   );
 };

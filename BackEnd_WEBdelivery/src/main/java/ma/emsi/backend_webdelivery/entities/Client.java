@@ -20,19 +20,12 @@ public class Client
     private String nom;
     private String password;
     private String email;
-    private String Prenom;
+    private String prenom;
     private String telephone;
     private String sexe;
     private String Adresse;
-    @OneToMany
-    private List<Plat> Panier;
-    @OneToMany
-    private List<Commande> historique;
-
-
-
-
-
+    @OneToOne
+    private Panier panier;
 }
 
 

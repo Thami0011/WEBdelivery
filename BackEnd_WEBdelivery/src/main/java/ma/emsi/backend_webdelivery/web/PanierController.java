@@ -38,28 +38,28 @@ public class PanierController {
         s_username = username.replaceAll("\"", "");
         return s_username;
     }
-
-    @PostMapping("/ajouterPanier")
-    public void ajouterPanier(){
-        Long id = ajouteridPanier(s_id);
-        String username = ajouteruserPanier(s_username);
-        clientRepository.findClientsByUsername(username).getPanier().add(platRepository.findPlatById(id));
-        System.out.println(clientRepository.findClientsByUsername(username).getPanier().toString());
-        clientRepository.save(clientRepository.findClientsByUsername(username));
-    }
-
-    @GetMapping("/Panier")
-    public List<Plat> Panier()
-    {
-        System.out.println(clientRepository.findClientsByUsername(s_username).getPanier());
-        return clientRepository.findClientsByUsername(s_username).getPanier();
-    }
-
-
-    @PostMapping("/supprimerPanier")
-    public void supprimerPanier(@RequestBody Long id) {
-        clientRepository.findClientsByUsername(s_username).getPanier().remove(platRepository.findPlatById(id));
-        clientRepository.save(clientRepository.findClientsByUsername(s_username));
-        System.out.println(id.toString() + "removed");
-    }
+//
+//    @PostMapping("/ajouterPanier")
+//    public void ajouterPanier(){
+//        Long id = ajouteridPanier(s_id);
+//        String username = ajouteruserPanier(s_username);
+//        clientRepository.findClientsByUsername(username).getPanier().add(platRepository.findPlatById(id));
+//        System.out.println(clientRepository.findClientsByUsername(username).getPanier().toString());
+//        clientRepository.save(clientRepository.findClientsByUsername(username));
+//    }
+//
+//    @GetMapping("/Panier")
+//    public List<Plat> Panier()
+//    {
+//        System.out.println(clientRepository.findClientsByUsername(s_username).getPanier());
+//        return clientRepository.findClientsByUsername(s_username).getPanier();
+//    }
+//
+//
+//    @PostMapping("/supprimerPanier")
+//    public void supprimerPanier(@RequestBody Long id) {
+//        clientRepository.findClientsByUsername(s_username).getPanier().remove(platRepository.findPlatById(id));
+//        clientRepository.save(clientRepository.findClientsByUsername(s_username));
+//        System.out.println(id.toString() + "removed");
+//    }
 }
