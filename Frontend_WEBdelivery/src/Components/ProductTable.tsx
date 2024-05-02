@@ -24,14 +24,18 @@ const ProductTable: React.FC = () => {
       });
   }, []);
 
-  const supprimerPanier = async (id: number) => {
+  
+  const supprimerPanier = async (id: number) => 
+    {
     try {
-      await axios.post("http://localhost:8085/supprimerPanier", id, {
+      await axios.post("http://localhost:8085/supprimerPanier", id,
+       {
         headers: {
           "Content-Type": "application/json",
         },
-      });
-      // Remove the item from the state
+      })
+      ;
+      
       setTableRow((prevItems) => prevItems.filter((item) => item.id !== id));
     } catch (error) {
       console.error(error);
@@ -95,8 +99,7 @@ const ProductTable: React.FC = () => {
                   onClick={() => {
                     supprimerPanier(item.id);
                   }}
-                  className="font-medium text-red-600 dark:text-red-500 hover:underline"
-                >
+                  className="font-medium text-red-600 dark:text-red-500 hover:underline">
                   Remove
                 </button>
               </td>
