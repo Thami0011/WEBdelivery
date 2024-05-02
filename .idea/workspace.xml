@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2431639b-9978-4601-8e42-05ddd6b87864" name="Changes" comment="front home">
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Carouselmoe.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Slider/Slider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Components/Slider/Slider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd_WEBdelivery/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend_WEBdelivery/src/Pages/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +113,7 @@
       <workItem from="1714051235061" duration="918000" />
       <workItem from="1714055021996" duration="1607000" />
       <workItem from="1714059280987" duration="605000" />
-      <workItem from="1714492156947" duration="7201000" />
+      <workItem from="1714492156947" duration="7501000" />
     </task>
     <task id="LOCAL-00001" summary="Menu&amp;Plat">
       <option name="closed" value="true" />
@@ -154,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714654873075</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="front home">
+      <option name="closed" value="true" />
+      <created>1714655156446</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655156446</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
