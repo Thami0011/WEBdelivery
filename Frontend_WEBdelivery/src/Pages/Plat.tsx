@@ -22,6 +22,7 @@ const Plat = () => {
   const [menuSelection, setMenuSelection] = useState<MenuSelection>({
     category: "",
   });
+  const username = sessionStorage.getItem("username");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,40 +38,12 @@ const Plat = () => {
       });
   }, [menuSelection]);
 
-  const ajouterIdAuPanier = async (platId: number) => {
+  
+  const ajouterAuPanier = async (platId:number) => {
     try {
-      await axios.post("http://localhost:8085/AddidPanier", platId, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      console.log("Plat ajouté au panier avec succès !");
-    } catch (error) {
-      console.error("Erreur lors de l'ajout du plat au panier :", error);
-      console.log({ platId });
-    }
-  };
-
-  const ajouteruserAuPanier = async () => {
-    try {
-      await axios.post(
-        "http://localhost:8085/AdduserPanier",
-        sessionStorage.getItem("username"),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+      await axios.post("http://localhost:8085/AddPlat",
+        {platId, username}
       );
-      console.log("User ajouté au panier avec succès !");
-    } catch (error) {
-      console.error("Erreur lors de l'ajout du plat au panier :", error);
-    }
-  };
-
-  const ajouterAuPanier = async () => {
-    try {
-      await axios.post("http://localhost:8085/ajouterPanier");
     } catch (error) {
       console.error("Erreur lors de l'ajout du plat au panier :", error);
     }
@@ -87,13 +60,8 @@ const Plat = () => {
               prix={item.prix}
               id={item.id}
               onClick={() => {
-                const username = sessionStorage.getItem("username");
                 if (username) {
-                  ajouterIdAuPanier(item.id);
-                  ajouteruserAuPanier();
-                  setTimeout(() => {
-                    ajouterAuPanier();
-                  }, 1000);
+                 ajouterAuPanier(item.id);
                 } else {
                   navigate("/login");
                 }

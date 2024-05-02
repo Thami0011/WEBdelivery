@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import ProductTable from '../Components/ProductTable';
@@ -6,7 +6,7 @@ import MagicButton from '../Components/magicButton';
 
 const Panier = () => {
   const navigate = useNavigate();
-
+   
   const ajouterCommande = async () => {
     try {
       // Ensure the content type is set to 'application/json' and the username is properly formatted as JSON
