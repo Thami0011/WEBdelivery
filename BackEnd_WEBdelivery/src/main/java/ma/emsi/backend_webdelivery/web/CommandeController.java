@@ -1,28 +1,30 @@
-//package ma.emsi.backend_webdelivery.web;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//
-//@RestController
-//@RequestMapping("/commandes")
-//@CrossOrigin(origins = "http://localhost:5173")
-//public class CommandeController {
-//
-//    @Autowired
-//    private CommandeService commandeService;
-//
-//    @PostMapping("/commander")
-//    public ResponseEntity<String> confirmerCommande(@RequestBody String username) {
-//        try {
-//            username = username.replaceAll("\"", "");  // Clean up the username string
-//            System.out.println("Processing order for username: " + username);
-//            double prixTotal = commandeService.CalculerPrix(username);
-//            return ResponseEntity.ok("Order confirmed with total price: " + prixTotal);
-//        } catch (Exception e) {
-//            System.err.println("Error processing order: " + e.getMessage());
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to process order: " + e.getMessage());
-//        }
-//    }
-//}
+package ma.emsi.backend_webdelivery.web;
+
+
+import ma.emsi.backend_webdelivery.entities.Client;
+import ma.emsi.backend_webdelivery.repository.ClientRepository;
+import ma.emsi.backend_webdelivery.service.CommandeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+
+@RestController
+@CrossOrigin(origins = "http://localhost:5173/")
+public class CommandeController
+{
+    @Autowired
+    private CommandeService commandeService;
+    @Autowired
+    private ClientRepository clientRepository;
+
+    @PostMapping("/commander")
+    public void Commander(@RequestBody String usernamewithquotes)
+    {
+        Client client = clientRepository.findClientsByUsername(usernamewithquotes.replaceAll("\"",""));
+        commandeService.AddPanierToCommande(client);
+    }
+}

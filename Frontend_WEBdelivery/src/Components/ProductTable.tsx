@@ -10,52 +10,27 @@ interface Plat {
 }
 
 const ProductTable: React.FC = () => {
-  const ajouteruserAuPanier = async () => {
-    try {
-      await axios.post(
-        "http://localhost:8085/AdduserPanier",
-        sessionStorage.getItem("username"),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("User ajouté au panier avec succès !");
-    } catch (error) {
-      console.error("Erreur lors de l'ajout du plat au panier :", error);
-    }
-  };
+  const [tablerow, setTableRow] = useState<Plat[]>([]);
+  const username = sessionStorage.getItem("username");
 
-  const fetchCartItems = () => {
-    ajouteruserAuPanier();
+  useEffect(() => {
     axios
-      .get<Plat[]>(`http://localhost:8085/Panier`)
+      .post<Plat[]>(`http://localhost:8085/Panier`,username)
       .then((response) => {
         setTableRow(response.data);
       })
       .catch((error) => {
         console.error("Error fetching cart items:", error);
       });
-  };
-
-  useEffect(() => {
-    fetchCartItems();
   }, []);
-
-  const [tablerow, setTableRow] = useState<Plat[]>([]);
 
   const supprimerPanier = async (id: number) => {
     try {
-      await axios.post(
-        "http://localhost:8085/supprimerPanier",
-        id,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      await axios.post("http://localhost:8085/supprimerPanier", id, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       // Remove the item from the state
       setTableRow((prevItems) => prevItems.filter((item) => item.id !== id));
     } catch (error) {

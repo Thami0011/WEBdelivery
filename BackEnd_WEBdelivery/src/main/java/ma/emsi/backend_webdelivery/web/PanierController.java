@@ -1,65 +1,28 @@
 package ma.emsi.backend_webdelivery.web;
 
 
-
-import lombok.Data;
 import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
-import ma.emsi.backend_webdelivery.repository.PlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
 @RestController
-@Data
 @CrossOrigin(origins = "http://localhost:5173/")
-public class PanierController {
-     public Long s_id;
-     public String s_username;
+public class PanierController
+{
     @Autowired
     private ClientRepository clientRepository;
 
-    @Autowired
-    private PlatRepository platRepository;
-
-    @PostMapping("/AddidPanier")
-    public Long ajouteridPanier(@RequestBody Long id) {
-        s_id = id;
-        return id;
+    @PostMapping("/Panier")
+    public List<Plat> Panier(@RequestBody String username)
+    {
+        System.out.println("Acces au panier pour " + username);
+        return clientRepository.findClientsByUsername(username).getPanier().getPlats();
     }
 
-
-    @PostMapping("/AdduserPanier")
-    public String ajouteruserPanier(@RequestBody String username) {
-        s_username = username.replaceAll("\"", "");
-        return s_username;
-    }
-//
-//    @PostMapping("/ajouterPanier")
-//    public void ajouterPanier(){
-//        Long id = ajouteridPanier(s_id);
-//        String username = ajouteruserPanier(s_username);
-//        clientRepository.findClientsByUsername(username).getPanier().add(platRepository.findPlatById(id));
-//        System.out.println(clientRepository.findClientsByUsername(username).getPanier().toString());
-//        clientRepository.save(clientRepository.findClientsByUsername(username));
-//    }
-//
-//    @GetMapping("/Panier")
-//    public List<Plat> Panier()
-//    {
-//        System.out.println(clientRepository.findClientsByUsername(s_username).getPanier());
-//        return clientRepository.findClientsByUsername(s_username).getPanier();
-//    }
-//
-//
-//    @PostMapping("/supprimerPanier")
-//    public void supprimerPanier(@RequestBody Long id) {
-//        clientRepository.findClientsByUsername(s_username).getPanier().remove(platRepository.findPlatById(id));
-//        clientRepository.save(clientRepository.findClientsByUsername(s_username));
-//        System.out.println(id.toString() + "removed");
-//    }
 }

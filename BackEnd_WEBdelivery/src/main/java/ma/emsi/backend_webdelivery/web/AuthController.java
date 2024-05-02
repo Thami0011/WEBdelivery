@@ -3,6 +3,8 @@ package ma.emsi.backend_webdelivery.web;
 import jakarta.servlet.http.HttpSession;
 import ma.emsi.backend_webdelivery.entities.Client;
 import java.util.*;
+
+import ma.emsi.backend_webdelivery.entities.Panier;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 
 import ma.emsi.backend_webdelivery.service.ClientService;
