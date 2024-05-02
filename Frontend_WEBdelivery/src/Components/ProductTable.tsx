@@ -25,10 +25,10 @@ const ProductTable: React.FC = () => {
   }, []);
 
   
-  const supprimerPanier = async (id: number) => 
+  const supprimerPanier = async (platId: number) => 
     {
     try {
-      await axios.post("http://localhost:8085/supprimerPanier", id,
+      await axios.post("http://localhost:8085/SupprimerPanier", {platId, username},
        {
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const ProductTable: React.FC = () => {
       })
       ;
       
-      setTableRow((prevItems) => prevItems.filter((item) => item.id !== id));
+      setTableRow((prevItems) => prevItems.filter((item) => item.id !== platId));
     } catch (error) {
       console.error(error);
     }

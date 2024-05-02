@@ -24,7 +24,7 @@ public class Client
     private String telephone;
     private String sexe;
     private String Adresse;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Panier panier;
 }
 
