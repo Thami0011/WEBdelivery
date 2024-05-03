@@ -5,6 +5,8 @@ import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
 import Plat from "../Pages/Plat";
 import Panier from "../Pages/Panier";
+import SuiviCommande from "../Pages/SuiviCommande";
+import Historique from "../Pages/Historique";
 
 const Router = () => {
   return (
@@ -16,6 +18,7 @@ const Router = () => {
           <Route path="/Menu" element={<Menu/>} />
           <Route path="/Plat" element={<Plat/>} />
           <Route path="/Panier" element={<Panier/>} />
+          <Route path="/Historique" element={<Historique/>} />
           <Route index element={<Home />} />
         </Routes>
       </BrowserRouter>

@@ -32,6 +32,9 @@ const ProductTable: React.FC = () => {
       0
     );
     setTotal(totalPrice);
+
+    // Store total in localStorage
+    localStorage.setItem("total", totalPrice.toString());
   }, [tablerow, quantities]);
 
   const supprimerPanier = async (platId: number) => {
@@ -60,16 +63,6 @@ const ProductTable: React.FC = () => {
       [platId]: quantity,
     }));
   };
-
-  const calculateTotalPrice = () => {
-    let totalPrice = 0;
-    tablerow.forEach((item) => {
-      totalPrice += item.prix * (quantities[item.id] || 1);
-    });
-   
-    return totalPrice;
-  };
- 
 
   return (
     <div className="mt-20 pt-20 relative overflow-x-auto shadow-md sm:rounded-lg">

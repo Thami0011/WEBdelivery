@@ -11,6 +11,9 @@ import ma.emsi.backend_webdelivery.repository.PanierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class CommandeService
 {
@@ -18,7 +21,8 @@ public class CommandeService
     private CommandeRepository commandeRepository;
     @Autowired
     private ClientRepository clientRepository;
-
+    @Autowired
+    private PanierRepository panierRepository;
 
 
     public void AddPanierToCommande(Client client,double prix)
@@ -29,5 +33,15 @@ public class CommandeService
         clientRepository.save(client1);
     }
 
+    public List<Commande> HistoriqueCommande(Client client)
+    {
+        List<Panier> listPanier = panierRepository.findPaniersByClient(client);
+        List<Commande> historique = new ArrayList<>();
+        for (Panier panier : listPanier)
+        {
+            historique.add(commandeRepository.findCommandeByPanier(panier));
+        }
+        return historique;
+    }
 
 }
