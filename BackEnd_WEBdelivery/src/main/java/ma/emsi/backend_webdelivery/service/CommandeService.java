@@ -29,7 +29,7 @@ public class CommandeService
     {
         commandeRepository.save(new Commande(null,client.getPanier(), prix));
         Client client1 = clientRepository.findClientsByUsername(client.getUsername());
-        client1.setPanier(new Panier());
+        client1.getPanier().getPlats().clear();
         clientRepository.save(client1);
     }
 
