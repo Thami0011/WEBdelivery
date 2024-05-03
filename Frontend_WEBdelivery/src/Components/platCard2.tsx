@@ -9,7 +9,10 @@ interface Props {
   onClick: () => void;
 }
 
-const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) => {
+
+
+const Component: React.FC<Props> = ({ name, image, prix, id, onClick }) =>
+   {
   return (
     <Card className="max-w-xs ">
       <div className="p-4 flex flex-col items-center">

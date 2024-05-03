@@ -40,7 +40,8 @@ const Plat = () => {
 
   
   const ajouterAuPanier = async (platId:number) => {
-    try {
+    try 
+    {
       await axios.post("http://localhost:8085/AddPlat",
         {platId, username}
       );
@@ -55,14 +56,18 @@ const Plat = () => {
         {menuItems.map((item) => (
           <Grid item xs={12} sm={6} md={4} key={item.id}>
             <Component
-              name={item.nom}
-              image={item.photo}
-              prix={item.prix}
-              id={item.id}
-              onClick={() => {
-                if (username) {
+                name={item.nom}
+                image={item.photo}
+                prix={item.prix}
+                id={item.id}
+                onClick={() => 
+                {
+                if (username)
+                {
                  ajouterAuPanier(item.id);
-                } else {
+                } 
+                else
+                {
                   navigate("/login");
                 }
               }}

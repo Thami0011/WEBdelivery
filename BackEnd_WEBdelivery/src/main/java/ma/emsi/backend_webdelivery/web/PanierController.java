@@ -51,7 +51,7 @@ public class PanierController
         client.getPanier().getPlats().remove(plat);
         panierRepository.save(client.getPanier());
         clientRepository.save(client);
-        System.out.println(plat.getId() + " supprime du panier");
+
     }
 
 }

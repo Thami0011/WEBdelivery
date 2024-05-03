@@ -19,19 +19,11 @@ public class CommandeService
     @Autowired
     private ClientRepository clientRepository;
 
-    public double CalculerPrix(Panier panier)
-    {
-        double total = 0;
-        for (Plat plat : panier.getPlats())
-        {
-            total += plat.getPrix();
-        }
-        return total;
-    }
 
-    public void AddPanierToCommande(Client client)
+
+    public void AddPanierToCommande(Client client,double prix)
     {
-        commandeRepository.save(new Commande(null,client.getPanier(), CalculerPrix(client.getPanier())));
+        commandeRepository.save(new Commande(null,client.getPanier(), prix));
         Client client1 = clientRepository.findClientsByUsername(client.getUsername());
         client1.setPanier(new Panier());
         clientRepository.save(client1);
