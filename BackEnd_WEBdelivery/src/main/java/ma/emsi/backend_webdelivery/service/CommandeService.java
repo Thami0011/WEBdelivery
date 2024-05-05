@@ -27,20 +27,16 @@ public class CommandeService
 
     public void AddPanierToCommande(Client client,double prix)
     {
-        commandeRepository.save(new Commande(null,client.getPanier(), prix));
-        Client client1 = clientRepository.findClientsByUsername(client.getUsername());
-        client1.getPanier().getPlats().clear();
-        clientRepository.save(client1);
+        commandeRepository.save(new Commande(null,client.getUsername(), prix));
+        client.getPanier().getPlats().clear();
+        panierRepository.save(client.getPanier());
+        clientRepository.save(client);
     }
 
     public List<Commande> HistoriqueCommande(Client client)
     {
-        List<Panier> listPanier = panierRepository.findPaniersByClient(client);
         List<Commande> historique = new ArrayList<>();
-        for (Panier panier : listPanier)
-        {
-            historique.add(commandeRepository.findCommandeByPanier(panier));
-        }
+        historique.addAll(commandeRepository.findCommandesByUsername(client.getUsername()));
         return historique;
     }
 

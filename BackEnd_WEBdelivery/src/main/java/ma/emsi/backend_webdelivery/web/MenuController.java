@@ -31,6 +31,7 @@ public class MenuController {
     @GetMapping("/Plat")
     List<Plat> plats(@RequestParam(required = false) String menu) {
         if (menu != null) {
+            System.out.println(menu + " chargé dans le site web.");
             return (platRepository.findPlatsByMenuId(menuRepository.findMenuByNom(menu).getId()));
         }
         return platRepository.findAll();

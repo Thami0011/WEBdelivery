@@ -37,11 +37,12 @@ public class AuthController {
         {
             if (existingUser.getPanier() == null || existingUser.getPanier().getPlats() == null)
             {
-                Panier panier = new Panier(null, new ArrayList<Plat>(),existingUser);
+                Panier panier = new Panier(null, new ArrayList<Long>(),existingUser);
                 panierRepository.save(panier);
                 existingUser.setPanier(panier);
                 clientRepository.save(existingUser);
             }
+            System.out.println(existingUser.getUsername() + " is connected.");
             return ResponseEntity.ok(existingUser);
         }
         else
@@ -57,6 +58,7 @@ public class AuthController {
         if(existingclient==null )
         {
             clientService.AddClient(client);
+            System.out.println(client.getUsername() + " has been added");
             return ResponseEntity.ok(client);
         }
         else

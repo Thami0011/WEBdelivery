@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface CommandeRepository extends JpaRepository<Commande,Long>
 {
-    Commande findCommandeById(int id);
-    Commande findCommandeByPanier(Panier panier);
+    List<Commande> findCommandesByUsername(String username);
 }

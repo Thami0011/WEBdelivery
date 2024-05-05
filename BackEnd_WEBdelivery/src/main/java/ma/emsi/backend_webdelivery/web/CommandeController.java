@@ -8,7 +8,6 @@ import ma.emsi.backend_webdelivery.repository.ClientRepository;
 import ma.emsi.backend_webdelivery.service.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
@@ -27,13 +26,14 @@ public class CommandeController
         Client client = clientRepository.findClientsByUsername(JSON.getUsername());
         double prix = Double.parseDouble(JSON.getTotal());
         commandeService.AddPanierToCommande(client,prix);
+        System.out.println(client.getUsername() + " a commade.");
     }
 
 
     @PostMapping("/Historique")
     public List<Commande> Historique(@RequestBody String username)
     {
-
+        System.out.println("Historique charge pour " + username);
         return commandeService.HistoriqueCommande(clientRepository.findClientsByUsername(username));
     }
 }
