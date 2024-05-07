@@ -3,7 +3,6 @@ package ma.emsi.backend_webdelivery.web;
 
 import ma.emsi.backend_webdelivery.DTO.DTOPlat;
 import ma.emsi.backend_webdelivery.entities.Client;
-import ma.emsi.backend_webdelivery.entities.Panier;
 import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 import ma.emsi.backend_webdelivery.repository.PanierRepository;
@@ -32,15 +31,22 @@ public class PanierController
     public List<Plat> Panier(@RequestBody String username)
     {
         System.out.println("Acces au panier pour " + username);
-        return clientRepository.findClientsByUsername(username).getPanier().getPlats();
+        ArrayList<Plat> panier = new ArrayList<Plat>();
+        for (Long idPlat :clientRepository.findClientsByUsername(username).getPanier().getPlats())
+        {
+            panier.add(platRepository.findPlatById(idPlat));
+        }
+        return panier;
     }
     @PostMapping("/AddPlat")
     public void AjouterPlat (@RequestBody DTOPlat JSON)
     {
         Client client= clientRepository.findClientsByUsername(JSON.getUsername());
         Plat plat = platRepository.findPlatById(JSON.getPlatId());
-        client.getPanier().getPlats().add(plat);
+        client.getPanier().getPlats().add(plat.getId());
+        panierRepository.save(client.getPanier());
         clientRepository.save(client);
+        System.out.println(client.getUsername() + " added " + plat.getNom() + " to panier.");
     }
 
     @PostMapping("/SupprimerPanier")
@@ -48,9 +54,10 @@ public class PanierController
     {
         Client client= clientRepository.findClientsByUsername(JSON.getUsername());
         Plat plat = platRepository.findPlatById(JSON.getPlatId());
-        client.getPanier().getPlats().remove(plat);
+        client.getPanier().getPlats().remove(plat.getId());
         panierRepository.save(client.getPanier());
         clientRepository.save(client);
+        System.out.println(client.getUsername() + " removed " + plat.getNom() + " from panier.");
 
     }
 

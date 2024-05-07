@@ -170,9 +170,19 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               {username ? (
                 <>
-                  <Typography color={"black"}>
+                  <Typography color={"text.primary"}>
                     Hello {sessionStorage.getItem("Prenom") + " " + sessionStorage.getItem("nom")}
                   </Typography>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    size="small"
+                    onClick={() => { redirectToPage("/Historique"); }}
+                  >
+                    <Typography>
+                      Historique
+                    </Typography>
+                  </Button>
                   <Button
                     color="primary"
                     variant="text"

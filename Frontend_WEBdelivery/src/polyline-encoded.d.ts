@@ -12,5 +12,5 @@ declare module 'polyline-encoded' {
     }
 
     const polylineUtil: PolylineUtil;
-    export = polylineUtil;
+    export = polylineUtil;
 }

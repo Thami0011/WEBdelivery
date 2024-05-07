@@ -14,8 +14,8 @@ import java.util.List;
 public class Panier {
     @Id @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany
-    private List<Plat> plats;
+    @ElementCollection
+    private List<Long> plats;
     @OneToOne
     private Client client;
 }
