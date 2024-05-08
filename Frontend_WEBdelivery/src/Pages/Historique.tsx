@@ -1,10 +1,8 @@
-import React from 'react'
-import HistoriqueTable from '../Components/HistoriqueTable'
+import React from "react";
+import HistoriqueTable from "../Components/HistoriqueTable";
 
 const Historique = () => {
-  return (
-    <HistoriqueTable/>
-  )
-}
+  return <HistoriqueTable />;
+};
 
-export default Historique
+export default Historique;

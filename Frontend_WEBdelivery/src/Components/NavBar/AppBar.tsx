@@ -138,12 +138,13 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     Menu
                   </Typography>
                 </MenuItem>
-                
+
                 <MenuItem
-                 onClick={()=>{sessionStorage.getItem("username")?
-                  redirectToPage("/Panier"):
-                  redirectToPage("/login");
-                 }}
+                  onClick={() => {
+                    sessionStorage.getItem("username")
+                      ? redirectToPage("/Panier")
+                      : redirectToPage("/login");
+                  }}
                   sx={{ py: "6px", px: "12px" }}
                 >
                   <Typography variant="body2" color="text.primary">
@@ -171,23 +172,29 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
               {username ? (
                 <>
                   <Typography color={"text.primary"}>
-                    Hello {sessionStorage.getItem("Prenom") + " " + sessionStorage.getItem("nom")}
+                    Hello{" "}
+                    {sessionStorage.getItem("Prenom") +
+                      " " +
+                      sessionStorage.getItem("nom")}
                   </Typography>
                   <Button
                     color="primary"
                     variant="text"
                     size="small"
-                    onClick={() => { redirectToPage("/Historique"); }}
+                    onClick={() => {
+                      redirectToPage("/Historique");
+                    }}
                   >
-                    <Typography>
-                      Historique
-                    </Typography>
+                    <Typography>Historique</Typography>
                   </Button>
                   <Button
                     color="primary"
                     variant="text"
                     size="small"
-                    onClick={() => { handleSignOut(); redirectToPage("/"); }}
+                    onClick={() => {
+                      handleSignOut();
+                      redirectToPage("/");
+                    }}
                   >
                     Sign out
                   </Button>
@@ -206,7 +213,7 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                     color="primary"
                     variant="contained"
                     size="small"
-                    onClick={()=>redirectToPage('/register')}
+                    onClick={() => redirectToPage("/register")}
                   >
                     Sign up
                   </Button>
@@ -248,17 +255,20 @@ function AppAppBar({ mode, toggleColorMode }: AppAppBarProps) {
                   <MenuItem onClick={() => redirectToPage("/Menu")}>
                     Menu
                   </MenuItem>
-                  
-                  <MenuItem onClick={()=>{sessionStorage.getItem("username")?
-                  redirectToPage("/Panier"):
-                  redirectToPage("/login");
-                 }}>
+
+                  <MenuItem
+                    onClick={() => {
+                      sessionStorage.getItem("username")
+                        ? redirectToPage("/Panier")
+                        : redirectToPage("/login");
+                    }}
+                  >
                     Panier
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection("pricing")}>
                     Contact
                   </MenuItem>
-                  
+
                   <Divider />
                   <MenuItem>
                     <Button

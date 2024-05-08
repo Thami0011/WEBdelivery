@@ -92,150 +92,151 @@ function ClientForm() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 12,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Create Client
-          </Typography>
+      <div style={{ top: "50px" }}>
+        <Container component="main" maxWidth="xs" sx={{ marginTop: "1vh" }}>
+          <CssBaseline />
           <Box
-            component="form"
-            noValidate
-            onSubmit={handleCreateClient}
-            sx={{ mt: 3 }}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="prenom"
-                  required
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Create Client
+            </Typography>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleCreateClient}
+              sx={{ mt: 3 }}
+            >
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    autoComplete="given-name"
+                    name="prenom"
+                    required
+                    fullWidth
+                    id="prenom"
+                    label="First Name"
+                    value={prenom}
+                    onChange={(e) => setPrenom(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="nom"
+                    label="Last Name"
+                    name="nom"
+                    value={nom}
+                    onChange={(e) => setNom(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="confirmPassword"
+                    label="Confirm Password"
+                    type="password"
+                    id="confirmPassword"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="username"
+                    label="Username"
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="telephone"
+                    label="Telephone"
+                    id="telephone"
+                    type="tel" // Change type to "tel" for better mobile support
+                    value={telephone}
+                    onChange={(e) => setTelephone(e.target.value)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    select
+                    name="sexe"
+                    label="Sexe"
+                    id="sexe"
+                    value={sexe}
+                    onChange={(e) => setSexe(e.target.value)}
+                  >
+                    <MenuItem value="Homme">Homme</MenuItem>
+                    <MenuItem value="Femme">Femme</MenuItem>
+                  </TextField>
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="adresse"
+                    label="Adresse"
+                    id="adresse"
+                    value={adresse}
+                    onChange={(e) => setAdresse(e.target.value)}
+                  />
+                </Grid>
+                <Button
+                  type="submit"
                   fullWidth
-                  id="prenom"
-                  label="First Name"
-                  value={prenom}
-                  onChange={(e) => setPrenom(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="nom"
-                  label="Last Name"
-                  name="nom"
-                  value={nom}
-                  onChange={(e) => setNom(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email"
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="confirmPassword"
-                  label="Confirm Password"
-                  type="password"
-                  id="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="username"
-                  label="Username"
-                  id="username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="telephone"
-                  label="Telephone"
-                  id="telephone"
-                  type="tel" // Change type to "tel" for better mobile support
-                  value={telephone}
-                  onChange={(e) => setTelephone(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  select
-                  name="sexe"
-                  label="Sexe"
-                  id="sexe"
-                  value={sexe}
-                  onChange={(e) => setSexe(e.target.value)}
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
                 >
-                  <MenuItem value="Homme">Homme</MenuItem>
-                  <MenuItem value="Femme">Femme</MenuItem>
-                </TextField>
+                  S'enregistrer
+                </Button>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="adresse"
-                  label="Adresse"
-                  id="adresse"
-                  value={adresse}
-                  onChange={(e) => setAdresse(e.target.value)}
-                />
-              </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                S'enregistrer
-              </Button>
-            </Grid>
+            </Box>
           </Box>
-        </Box>
-        <Copyright sx={{ mt: 5 }} />
-      </Container>
+          <Copyright sx={{ mt: 5 }} />
+        </Container>
+      </div>
     </ThemeProvider>
   );
 }

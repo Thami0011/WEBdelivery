@@ -29,7 +29,7 @@ export default function CallToActionWithIllustration() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        filter: "brightness(0.8)", 
+        filter: "brightness(0.8)",
       }}
     >
       <Stack
@@ -37,15 +37,14 @@ export default function CallToActionWithIllustration() {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
         w={"100%"}
-        align="left" 
-        marginLeft={{ base: "20px", md: "40px" }} 
+        align="left"
+        marginLeft={{ base: "20px", md: "40px" }}
       >
         <Heading
           fontWeight={600}
           fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
           color={"black"}
-
         >
           WEB{" "}
           <Text as={"span"} color={"orange.400"}>
@@ -55,18 +54,18 @@ export default function CallToActionWithIllustration() {
         <Text
           color={"black"}
           maxW={"3xl"}
-          fontSize={"xl"} 
+          fontSize={"xl"}
           fontFamily={"'Roboto', sans-serif"}
-          fontWeight={"bold"} 
+          fontWeight={"bold"}
         >
           Commandez vos repas préférés jusqu'à chez vous, en quelques clics
           simplement.
         </Text>
         <Button
           rounded={"full"}
-          px={8} 
-          py={4} 
-          fontSize={"xl"} 
+          px={8}
+          py={4}
+          fontSize={"xl"}
           onClick={() => {
             window.location.href = "/Menu";
           }}

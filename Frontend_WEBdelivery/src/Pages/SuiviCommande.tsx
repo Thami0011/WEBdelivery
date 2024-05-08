@@ -1,10 +1,8 @@
-import React from 'react'
-import MapComponent from '../Components/map'
+import React from "react";
+import MapComponent from "../Components/map";
 
 const SuiviCommande = () => {
-  return (
-    <MapComponent/>
-  )
-}
+  return <MapComponent />;
+};
 
-export default SuiviCommande
+export default SuiviCommande;

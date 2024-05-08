@@ -111,10 +111,7 @@ const ProductTable: React.FC = () => {
                       required
                       value={quantities[item.id] || 1}
                       onChange={(e) =>
-                        handleQuantityChange(
-                          item.id,
-                          parseInt(e.target.value)
-                        )
+                        handleQuantityChange(item.id, parseInt(e.target.value))
                       }
                     />
                   </div>
