@@ -1,16 +1,20 @@
-import React from "react";
-import { AuroraBackground } from "../Components/background";
-import { TextGenerateEffect } from "../Components/Text";
-import Carousel from "../Components/carousel";
-import MagicButton from "../Components/magicButton"; 
+import "tailwindcss/tailwind.css";
+import Carouselmoe from "../Components/Carouselmoe";
+import HomeMiddleTop from "../Components/HomeMiddle/HomeMiddleTop";
+import Aboutus from "../Components/Aboutus";
 
 const Home = () => {
   return (
-    <AuroraBackground className="bg-light dark:bg-light">
-      <Carousel />
-      <TextGenerateEffect className="m-10" words="Bienvenue sur WebDelivery, votre destination en ligne pour des livraisons rapides et des saveurs délicieuses ! 🚀🍔 " />
-      <MagicButton /> 
-    </AuroraBackground>
+    <>
+      <Carouselmoe>
+        <img src="src/assets/1.jpg" />
+        <img src="src/assets/2.jpg" />
+        <img src="src/assets/3.jpg" />
+        <img src="src/assets/5.jpg" />
+      </Carouselmoe>
+      <Aboutus />
+      <HomeMiddleTop />
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Console } from "console";
 
 const defaultTheme = createTheme();
 
@@ -35,6 +36,7 @@ function LoginForm() {
       });
 
       if (response.status === 200) {
+        console.log(response.data.prenom);
         sessionStorage.setItem("username", response.data.username);
         sessionStorage.setItem("nom", response.data.nom);
         sessionStorage.setItem("Prenom", response.data.prenom);
@@ -54,7 +56,7 @@ function LoginForm() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 25,
+            marginTop: 15,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -107,11 +109,6 @@ function LoginForm() {
             </Button>
 
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/register" variant="body2">
                   {"Don't have an account? Sign Up"}

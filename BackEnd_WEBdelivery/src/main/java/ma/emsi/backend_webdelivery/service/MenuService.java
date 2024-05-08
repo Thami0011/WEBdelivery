@@ -31,8 +31,4 @@ public class MenuService
         Plat plat=platRepository.findPlatByNom(p.getNom());
         menu.getPlats().add(plat);
     }
-
-
-
-
 }
