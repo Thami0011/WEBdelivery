@@ -10,7 +10,7 @@ const Home = () => {
         <img src="src/assets/1.jpg" />
         <img src="src/assets/2.jpg" />
         <img src="src/assets/3.jpg" />
-        <img src="src/assets/5.jpg" />
+       
       </Carouselmoe>
       <Aboutus />
       <HomeMiddleTop />

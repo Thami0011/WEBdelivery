@@ -51,6 +51,10 @@ public class AuthController {
         }
     }
 
+
+
+
+
     @PostMapping("/Register")
     public ResponseEntity<?> register(@RequestBody Client client)
     {

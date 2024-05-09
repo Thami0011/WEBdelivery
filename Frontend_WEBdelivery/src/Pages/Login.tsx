@@ -1,6 +1,6 @@
 import React from "react";
 import LoginForm from "../Components/Forms/LoginFrom";
-import backgroundImage from "../assets/registerbg.jpg";
+  import backgroundImage from "../assets/registerbg.jpg";
 function Login() {
   return (
     <div

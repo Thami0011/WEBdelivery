@@ -4,6 +4,8 @@ import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
 import Component from "../Components/platCard2";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
 interface Plat {
   nom: string;
@@ -22,6 +24,7 @@ const Plat = () => {
   const [menuSelection, setMenuSelection] = useState<MenuSelection>({
     category: "",
   });
+  const [openSnackbar, setOpenSnackbar] = useState(false); // état du Snackbar
   const username = sessionStorage.getItem("username");
   const navigate = useNavigate();
 
@@ -41,9 +44,14 @@ const Plat = () => {
   const ajouterAuPanier = async (platId: number) => {
     try {
       await axios.post("http://localhost:8085/AddPlat", { platId, username });
+      setOpenSnackbar(true); // Ouvre le Snackbar après l'ajout au panier
     } catch (error) {
       console.error("Erreur lors de l'ajout du plat au panier :", error);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false); // Ferme le Snackbar
   };
 
   return (
@@ -67,6 +75,20 @@ const Plat = () => {
           </Grid>
         ))}
       </Grid>
+      {/* Snackbar pour afficher le message */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000} // Durée d'affichage du Snackbar
+        onClose={handleCloseSnackbar}
+      >
+        <MuiAlert
+          onClose={handleCloseSnackbar}
+          severity="success" // Vous pouvez changer la couleur ici
+          sx={{ width: "100%" }}
+        >
+          Plat ajouté au panier avec succès !
+        </MuiAlert>
+      </Snackbar>
     </Box>
   );
 };

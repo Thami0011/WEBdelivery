@@ -52,7 +52,7 @@ const Aboutus: React.FC = () => {
           <h2
             style={{
               fontWeight: "bolder",
-              fontSize: "45px",
+              fontSize: "40px",
               margin: "20px",
               fontFamily: "Lato",
               backgroundColor: "rgba(0,0,0,0.1)",
@@ -65,7 +65,7 @@ const Aboutus: React.FC = () => {
         <p
           style={{
             fontFamily: "'Nunito Sans', sans-serif",
-            fontSize: "19px",
+            fontSize: "17px",
             fontWeight: "bold",
           }}
         >
