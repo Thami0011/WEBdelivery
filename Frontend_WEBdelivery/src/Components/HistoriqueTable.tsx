@@ -57,7 +57,7 @@ const HistoriqueTable: React.FC = () => {
               <td className="px-20 py-4 font-semibold text-gray-900 dark:text-white">
                 {item.id}
               </td>
-              
+
               <td className="px-20 py-4 font-semibold text-gray-900 dark:text-white">
                 {item.prixTotal}
               </td>

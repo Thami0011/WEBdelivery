@@ -14,12 +14,14 @@ const ProductTable: React.FC = () => {
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
   const [total, setTotal] = useState<number>(0);
   const username = sessionStorage.getItem("username");
+  const [rowKeys, setRowKeys] = useState<string[]>([]);
 
   useEffect(() => {
     axios
       .post<Plat[]>(`http://localhost:8085/Panier`, username)
       .then((response) => {
         setTableRow(response.data);
+        setRowKeys(response.data.map((item) => `product_${item.id}`)); // Generate keys
       })
       .catch((error) => {
         console.error("Error fetching cart items:", error);
@@ -37,7 +39,7 @@ const ProductTable: React.FC = () => {
     localStorage.setItem("total", totalPrice.toString());
   }, [tablerow, quantities]);
 
-  const supprimerPanier = async (platId: number) => {
+  const supprimerPanier = async (platId: number, index: number) => {
     try {
       await axios.post(
         "http://localhost:8085/SupprimerPanier",
@@ -49,9 +51,16 @@ const ProductTable: React.FC = () => {
         }
       );
 
-      setTableRow((prevItems) =>
-        prevItems.filter((item) => item.id !== platId)
-      );
+      setTableRow((prevItems) => {
+        const newItems = [...prevItems];
+        newItems.splice(index, 1);
+        return newItems;
+      });
+      setRowKeys((prevKeys) => {
+        const newKeys = [...prevKeys];
+        newKeys.splice(index, 1);
+        return newKeys;
+      });
     } catch (error) {
       console.error(error);
     }
@@ -85,9 +94,9 @@ const ProductTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {tablerow.map((item) => (
+          {tablerow.map((item, index) => (
             <tr
-              key={item.id}
+              key={rowKeys[index]} // Use generated key
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <td className="p-4">
@@ -105,16 +114,13 @@ const ProductTable: React.FC = () => {
                   <div>
                     <input
                       type="number"
-                      id="first_product"
+                      id={`quantity_${item.id}`}
                       className="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="1"
                       required
                       value={quantities[item.id] || 1}
                       onChange={(e) =>
-                        handleQuantityChange(
-                          item.id,
-                          parseInt(e.target.value)
-                        )
+                        handleQuantityChange(item.id, parseInt(e.target.value))
                       }
                     />
                   </div>
@@ -126,7 +132,7 @@ const ProductTable: React.FC = () => {
               <td className="px-20 py-4">
                 <button
                   onClick={() => {
-                    supprimerPanier(item.id);
+                    supprimerPanier(item.id, index);
                   }}
                   className="font-medium text-red-600 dark:text-red-500 hover:underline"
                 >

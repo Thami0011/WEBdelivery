@@ -28,14 +28,15 @@ function Menu() {
   }, []);
 
   return (
-    
     <Box sx={{ maxWidth: "80%", marginLeft: "23vh", paddingTop: "10rem" }}>
       <Grid container spacing={9}>
         {menuItems.map((item) => (
           <Grid item xs={12} md={4} key={item.id}>
-            <Cards name={item.nom}
-            description={item.description}
-            image={"src/assets/images/"+item.photo} />
+            <Cards
+              name={item.nom}
+              description={item.description}
+              image={"src/assets/images/" + item.photo}
+            />
           </Grid>
         ))}
       </Grid>

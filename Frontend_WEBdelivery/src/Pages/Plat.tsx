@@ -38,13 +38,9 @@ const Plat = () => {
       });
   }, [menuSelection]);
 
-  
-  const ajouterAuPanier = async (platId:number) => {
-    try 
-    {
-      await axios.post("http://localhost:8085/AddPlat",
-        {platId, username}
-      );
+  const ajouterAuPanier = async (platId: number) => {
+    try {
+      await axios.post("http://localhost:8085/AddPlat", { platId, username });
     } catch (error) {
       console.error("Erreur lors de l'ajout du plat au panier :", error);
     }
@@ -56,18 +52,14 @@ const Plat = () => {
         {menuItems.map((item) => (
           <Grid item xs={12} sm={6} md={4} key={item.id}>
             <Component
-                name={item.nom}
-                image={item.photo}
-                prix={item.prix}
-                id={item.id}
-                onClick={() => 
-                {
-                if (username)
-                {
-                 ajouterAuPanier(item.id);
-                } 
-                else
-                {
+              name={item.nom}
+              image={item.photo}
+              prix={item.prix}
+              id={item.id}
+              onClick={() => {
+                if (username) {
+                  ajouterAuPanier(item.id);
+                } else {
                   navigate("/login");
                 }
               }}
