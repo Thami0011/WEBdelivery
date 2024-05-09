@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import L, { LatLngExpression, LeafletMouseEvent } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import MagicButton from "./magicButton";
+import { useNavigate } from "react-router-dom";
 
 // Définir le type pour la méthode fromEncoded
 declare module "leaflet" {
@@ -10,6 +12,7 @@ declare module "leaflet" {
 }
 
 const MapComponent: React.FC = () => {
+  const navigate = useNavigate();
   const [map, setMap] = useState<L.Map | null>(null);
   const [startPointMarker, setStartPointMarker] = useState<L.Marker | null>(
     null
@@ -86,26 +89,29 @@ const MapComponent: React.FC = () => {
   };
 
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <div id="map" style={{ height: "90%", width: "100%" }}></div>
-      <div>
-        <label htmlFor="start">Start Point:</label>
-        <input
-          type="text"
-          id="start"
-          name="start"
-          value={
-            currentLocation
-              ? `${currentLocation.latitude}, ${currentLocation.longitude}`
-              : ""
-          }
-        />
-        <label htmlFor="end">End Point:</label>
-        <input type="text" id="end" name="end" />
-        <button onClick={getCurrentLocation}>Current Location</button>
-        <button onClick={calculateRoute}>Calculate Route</button>
+    <>
+      <div style={{ width: "100vw", height: "80vh", marginTop: "50px" }}>
+        <div id="map" style={{ height: "90%", width: "100%" }}></div>
+        <div>
+          <label htmlFor="start">Start Point:</label>
+          <input
+            type="text"
+            id="start"
+            name="start"
+            value={
+              currentLocation
+                ? `${currentLocation.latitude}, ${currentLocation.longitude}`
+                : ""
+            }
+          />
+          <label htmlFor="end">End Point:</label>
+          <input type="text" id="end" name="end" />
+          <button onClick={getCurrentLocation}>Current Location</button>
+          <button onClick={calculateRoute}>Calculate Route</button>
+        </div>
       </div>
-    </div>
+      <MagicButton text="Valider ma position" onClick={() => navigate("/")} />
+    </>
   );
 };
 
