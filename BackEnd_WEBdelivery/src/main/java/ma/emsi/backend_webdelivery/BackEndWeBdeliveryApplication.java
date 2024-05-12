@@ -7,6 +7,7 @@ import ma.emsi.backend_webdelivery.repository.ClientRepository;
 
 import ma.emsi.backend_webdelivery.repository.MenuRepository;
 import ma.emsi.backend_webdelivery.repository.PlatRepository;
+import ma.emsi.backend_webdelivery.service.CalculerRoute;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +27,6 @@ public class BackEndWeBdeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception
 	{
-
+		CalculerRoute.calculateRoute();
 	}
 }

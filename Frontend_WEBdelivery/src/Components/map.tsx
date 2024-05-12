@@ -110,7 +110,10 @@ const MapComponent: React.FC = () => {
           <button onClick={calculateRoute}>Calculate Route</button>
         </div>
       </div>
-      <MagicButton text="Valider ma position" onClick={() => navigate("/")} />
+      <MagicButton
+        text="Valider ma position"
+        onClick={() => navigate("/")}
+      />
     </>
   );
 };
