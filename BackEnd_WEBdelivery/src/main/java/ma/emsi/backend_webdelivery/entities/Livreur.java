@@ -26,5 +26,4 @@ public class Livreur
     private String telephone;
     private String sexe;
     private String Adresse;
-
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public interface CommandeRepository extends JpaRepository<Commande,Long>
 {
     List<Commande> findCommandesByUsername(String username);
+    List<Commande> findCommandesByLivree(boolean livree);
 }
