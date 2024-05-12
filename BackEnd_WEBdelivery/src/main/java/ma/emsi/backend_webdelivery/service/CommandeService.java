@@ -8,11 +8,13 @@ import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 import ma.emsi.backend_webdelivery.repository.CommandeRepository;
 import ma.emsi.backend_webdelivery.repository.PanierRepository;
+import ma.emsi.backend_webdelivery.repository.PlatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CommandeService
@@ -23,11 +25,18 @@ public class CommandeService
     private ClientRepository clientRepository;
     @Autowired
     private PanierRepository panierRepository;
+    @Autowired
+    private PlatRepository platRepository;
 
 
     public void AddPanierToCommande(Client client,double prix)
     {
-        commandeRepository.save(new Commande(null,client.getUsername(), prix));
+        List<String> nomPlats = new ArrayList<>();
+        for (Long id: client.getPanier().getPlats())
+        {
+            nomPlats.add(platRepository.findPlatById(id).getNom());
+        }
+        commandeRepository.save(new Commande(null,client.getUsername(), prix,nomPlats));
         client.getPanier().getPlats().clear();
         panierRepository.save(client.getPanier());
         clientRepository.save(client);

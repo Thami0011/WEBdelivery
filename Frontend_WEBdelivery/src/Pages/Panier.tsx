@@ -24,7 +24,7 @@ const Panier = () => {
 
       // Check if the response is successful before navigation
       if (response.status === 200) {
-        navigate("/suivi");
+        navigate("/Historique");
       } else {
         console.error("Failed to add order:", response.status);
         alert("Failed to process the order. Please try again.");
