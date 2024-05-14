@@ -36,7 +36,7 @@ public class CommandeService
         {
             nomPlats.add(platRepository.findPlatById(id).getNom());
         }
-        commandeRepository.save(new Commande(null,client.getUsername(), prix,nomPlats,false));
+        commandeRepository.save(new Commande(null,client.getUsername(), prix,nomPlats,false, 0));
         client.getPanier().getPlats().clear();
         panierRepository.save(client.getPanier());
         clientRepository.save(client);

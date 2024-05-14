@@ -6,19 +6,20 @@ interface Commande {
   prixTotal: number;
 }
 
-const Commande = () => {
-  const [tablerow, setTableRow] = useState<Commande[]>([]);
+const CommandeComponent = () => {
+  const [tableRows, setTableRows] = useState<Commande[]>([]);
 
   useEffect(() => {
+    const username = sessionStorage.getItem("username");
     axios
-      .get('http://localhost:8085/commandes')
+      .post('http://localhost:8085/commandes', username)
       .then((response) => {
-        setTableRow(response.data);
+        setTableRows(response.data);
       })
       .catch((error) => {
         console.error("Error fetching menu items:", error);
       });
-  }, [tablerow]);
+  }, []);
 
   return (
     <div className="ml-5 mt-20 pt-20 w-full flex justify-center">
@@ -37,31 +38,31 @@ const Commande = () => {
             </tr>
           </thead>
           <tbody>
-            {tablerow.map((item, index) => (
+            {tableRows.map((commande) => (
               <tr
-              
-                key={index}
+                key={commande.id}
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
                 <td
-                style={{margin:"20px"}} 
-                className="px-8 py-6 font-semibold text-gray-900 dark:text-white">
-                  {item.id}
+                  style={{ margin: "20px" }}
+                  className="px-8 py-6 font-semibold text-gray-900 dark:text-white"
+                >
+                  {commande.id}
                 </td>
                 <td
-                style={{margin:"20px"}}  
-                className="px-8 py-6 font-semibold text-gray-900 dark:text-white">
-                  {item.prixTotal}
+                  style={{ margin: "20px" }}
+                  className="px-8 py-6 font-semibold text-gray-900 dark:text-white"
+                >
+                  {commande.prixTotal}
                 </td>
-                <td style={{margin:"20px"}} 
-                className="px-8 py-6">
+                <td
+                  style={{ margin: "20px" }}
+                  className="px-8 py-6"
+                >
                   <button
-                    onClick={() => {
-                      supprimerPanier(item.id, index);
-                    }}
                     className="font-medium text-red-600 dark:text-red-500 hover:underline"
                   >
-                    Livrer
+                    Commande livrée
                   </button>
                 </td>
               </tr>
@@ -73,4 +74,4 @@ const Commande = () => {
   );
 };
 
-export default Commande;
+export default CommandeComponent;

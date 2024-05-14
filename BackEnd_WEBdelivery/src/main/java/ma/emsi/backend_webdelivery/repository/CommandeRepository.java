@@ -10,4 +10,6 @@ public interface CommandeRepository extends JpaRepository<Commande,Long>
 {
     List<Commande> findCommandesByUsername(String username);
     List<Commande> findCommandesByLivree(boolean livree);
+    Commande  findCommandesById(Long id);
+    List<Commande> findCommandeByLivreeAndAffectee( int var);
 }

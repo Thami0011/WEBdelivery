@@ -3,7 +3,8 @@ import Login from '../pages/login';
 import Home from '../Component/home';
 import Commande from "../pages/Commande";
 import Register from '../Component/register';
-const Router = () => {
+const Router = () => 
+  {
   return (
     <BrowserRouter>
       <Routes>

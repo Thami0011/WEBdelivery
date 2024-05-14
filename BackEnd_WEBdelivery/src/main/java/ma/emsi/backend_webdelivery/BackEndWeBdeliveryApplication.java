@@ -5,6 +5,7 @@ import ma.emsi.backend_webdelivery.entities.Menu;
 import ma.emsi.backend_webdelivery.entities.Plat;
 import ma.emsi.backend_webdelivery.repository.ClientRepository;
 
+import ma.emsi.backend_webdelivery.repository.CommandeRepository;
 import ma.emsi.backend_webdelivery.repository.MenuRepository;
 import ma.emsi.backend_webdelivery.repository.PlatRepository;
 import ma.emsi.backend_webdelivery.service.CalculerRoute;
@@ -20,6 +21,8 @@ import java.util.List;
 public class BackEndWeBdeliveryApplication implements CommandLineRunner {
 	@Autowired
 	private MenuRepository menuRepository;
+	@Autowired
+	private CommandeRepository commandeRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(BackEndWeBdeliveryApplication.class, args);
 	}
@@ -27,6 +30,7 @@ public class BackEndWeBdeliveryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception
 	{
-		CalculerRoute.calculateRoute();
+		//CalculerRoute.calculateRoute();
+		//System.out.println(commandeRepository.findCommandeByAffectee(false));
 	}
 }

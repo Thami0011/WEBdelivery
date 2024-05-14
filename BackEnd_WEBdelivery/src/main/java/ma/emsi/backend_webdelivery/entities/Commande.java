@@ -19,4 +19,5 @@ public class Commande
     @ElementCollection
     private List<String> plats;
     private boolean livree = false;
+    private int affectee;
 }
