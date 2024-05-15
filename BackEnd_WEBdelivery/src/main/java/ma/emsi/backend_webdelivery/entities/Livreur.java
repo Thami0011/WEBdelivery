@@ -26,7 +26,6 @@ public class Livreur
     private String sexe;
     private String Adresse;
     private String Localisation;
-    @ElementCollection
-    private List<Long> CommandeId;
-    private boolean dispo=true;
+    private Long CommandeId;
+    private boolean dispo = true;
 }
