@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,4 +16,8 @@ public class Commande
     private Long id;
     private String username;
     private double prixTotal;
+    @ElementCollection
+    private List<String> plats;
+    private boolean livree = false;
+    private boolean affectee = false;
 }

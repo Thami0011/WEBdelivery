@@ -26,7 +26,7 @@ public class CommandeController
         Client client = clientRepository.findClientsByUsername(JSON.getUsername());
         double prix = Double.parseDouble(JSON.getTotal());
         commandeService.AddPanierToCommande(client,prix);
-        System.out.println(client.getUsername() + " a commade.");
+        System.out.println(client.getUsername() + " a commande.");
     }
 
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
@@ -14,7 +14,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Console } from "console";
+
 
 const defaultTheme = createTheme();
 
@@ -30,7 +30,8 @@ function LoginForm() {
     const password = formData.get("password") as string;
 
     try {
-      const response = await axios.post("http://localhost:8085/login", {
+      const response = await axios.post("http://localhost:8085/LoginLivreur", 
+      {
         username,
         password,
       });
@@ -40,10 +41,11 @@ function LoginForm() {
         sessionStorage.setItem("username", response.data.username);
         sessionStorage.setItem("nom", response.data.nom);
         sessionStorage.setItem("Prenom", response.data.prenom);
+        sessionStorage.setItem("Localistion",response.data.localisation);
 
         setUsername(response.data.username);
 
-        navigate("/menu");
+        navigate("/suivi");
       }
     } catch (error) {
       setError("Invalid credentials. Please try again.");
@@ -52,7 +54,7 @@ function LoginForm() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" style={{marginLeft:"150px"}}>
+      <Container component="main" maxWidth="xs" style={{maxWidth:"1280px" , padding:"2rem" , textAlign:"center"}}>
         <CssBaseline />
         <Box
           sx={{
@@ -107,7 +109,6 @@ function LoginForm() {
             >
               Sign In
             </Button>
-           
 
             <Grid container>
               <Grid item>
