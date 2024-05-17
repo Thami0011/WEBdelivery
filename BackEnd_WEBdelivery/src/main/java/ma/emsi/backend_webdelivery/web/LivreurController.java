@@ -99,6 +99,7 @@ public class LivreurController
             livreur.setDispo(true);
             Commande commande = commandeRepository.findCommandesById(livreur.getCommandeId());
             commande.setLivree(true);
+            System.out.println("Commande livrée");
             return ResponseEntity.ok("Livraison Confirmee");
         }
         catch (Exception e){

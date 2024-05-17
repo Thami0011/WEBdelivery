@@ -29,8 +29,8 @@ const Home = () => {
           color: "Black", 
         }}
       >
-         <h1>Bienvenue, livreurs!</h1>
-         <h2>Préparez-vous à fournir un service de livraison exceptionnel à nos clients.  Merci pour votre dévouement et votre engagement envers notre entreprise.</h2>
+         <h1 className='text-4xl font-extrabold'>Bienvenue, livreurs!</h1>
+         <h2 className='text-xl'>Préparez-vous à fournir un service de livraison exceptionnel à nos clients.  Merci pour votre dévouement et votre engagement envers notre entreprise.</h2>
          <div style={{ display: 'flex', gap: '10px' }}>
             <Button variant="contained"  sx={{ bgcolor: 'purple' }} onClick={() => redirectToPage("/login")}>
               Sign in

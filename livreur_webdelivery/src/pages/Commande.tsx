@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Button } from '@/components/ui/button';
+
 
 interface Commande {
   id: number;
@@ -50,55 +60,37 @@ const CommandeComponent = () => {
   }
 
   return (
-    <div className="ml-5 mt-20 pt-20 w-full flex justify-center">
-      <div className="max-w-screen-xl w-full overflow-x-auto">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" className="px-8 py-4">
-                Id commande
-              </th>
-              <th scope="col" className="px-8 py-4">
-                Prix
-              </th>
-              <th scope="col" className="px-8 py-4"></th>
-              <th scope="col" className="px-8 py-4"></th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr
-                key={Commande.id}
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-              >
-                <td
-                  style={{ margin: "20px" }}
-                  className="px-8 py-6 font-semibold text-gray-900 dark:text-white"
-                >
-                  {Commande.id}
-                </td>
-                <td
-                  style={{ margin: "20px" }}
-                  className="px-8 py-6 font-semibold text-gray-900 dark:text-white"
-                >
-                  {Commande.prixTotal}
-                </td>
-                <td
-                  style={{ margin: "20px" }}
-                  className="px-8 py-6"
-                >
-                  <button
-                    className="font-medium text-red-600 dark:text-red-500 hover:underline"
-                    onClick={()=>livrerCommande(Commande.id)}
-                  >
-                    Commande livrée
-                  </button>
-                </td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </div>
+    <>
+    
+    {/* <div className='flex flex-col gap-9 items-center justify-center h-screen  '>
+<h1 className='text-6xl mt-20'>Bienvenue {sessionStorage.getItem("Prenom")} {sessionStorage.getItem("nom")}</h1>
+    <Card className="w-[350px] h-[250px] ">
+    <CardContent className='font-bold text-xl'>Voici votre commande disponible : {Commande.id}</CardContent>
+    <CardDescription>Prix de la commande : {Commande.prixTotal}</CardDescription>
+    <CardFooter className='float-right'>
+      
+      <Button variant='default' onClick={()=>livrerCommande}>Confirmer la livraison</Button>
+    </CardFooter>
+    </Card>
+    </div> */}
+    <div className='flex flex-col gap-9 items-center justify-center h-screen  '>
+    <Card className="w-[350px] h-[170px]">
+      <CardHeader>
+        <CardTitle>Bienvenue {sessionStorage.getItem("Prenom")} {sessionStorage.getItem("nom")}</CardTitle>
+        <CardDescription>Voici votre commande disponible : {Commande.id}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <h2>Prix de la commande : {Commande.prixTotal} $</h2>
+      </CardContent>
+      <CardFooter className="flex justify-center ml-52">
+        
+        <Button  variant='default' onClick={()=>livrerCommande}>Confirmer la livraison</Button>
+      </CardFooter>
+    </Card>
     </div>
+    
+    
+    </>
   );
 };
 

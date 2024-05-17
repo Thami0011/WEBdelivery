@@ -41,10 +41,11 @@ function LoginForm() {
         sessionStorage.setItem("username", response.data.username);
         sessionStorage.setItem("nom", response.data.nom);
         sessionStorage.setItem("Prenom", response.data.prenom);
+        sessionStorage.setItem("Localistion",response.data.localisation);
 
         setUsername(response.data.username);
 
-        navigate("/Commande");
+        navigate("/suivi");
       }
     } catch (error) {
       setError("Invalid credentials. Please try again.");
@@ -53,7 +54,7 @@ function LoginForm() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" style={{maxWidth:"1280px" , marginLeft:"250px", padding:"2rem" , textAlign:"center"}}>
+      <Container component="main" maxWidth="xs" style={{maxWidth:"1280px" , padding:"2rem" , textAlign:"center"}}>
         <CssBaseline />
         <Box
           sx={{
