@@ -10,3 +10,5 @@ public interface PlatRepository extends JpaRepository<Plat,Long> {
     List<Plat> findPlatsByMenuId(Long menuId);
     Plat findPlatById(Long id);
 }
+
+

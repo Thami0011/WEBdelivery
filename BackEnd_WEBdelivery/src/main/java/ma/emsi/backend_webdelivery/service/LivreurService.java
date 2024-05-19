@@ -30,51 +30,31 @@ public class LivreurService
         livreurRepository.save(livreur);
     }
 
+    public void affectercomandesLivreur(){
+       double minDistance =9999;
+       Livreur livProche = null;
+        for (Long id : LivreursCon){
+           Livreur livreur = livreurRepository.findLivreurById(id);
+           if(livreur.isDispo())
+           {
+               if (CalculerRoute.calculateRoute(livreur.getLocalisation()) < minDistance )
+               {
+                   minDistance = CalculerRoute.calculateRoute(livreur.getLocalisation());
+                   livProche = livreur;
+               }
+               List<Commande> comdispo = commandeRepository.findCommandesByAffectee(false);
+               if (!comdispo.isEmpty())
+               {
+                   livProche.setCommandeId(comdispo.get(0).getId());
+               }
+               livProche.setDispo(false);
+               livreurRepository.save(livProche);
+               comdispo.get(0).setAffectee(true);
+               commandeRepository.save(comdispo.get(0));
+           }
 
 
-    public List<Commande> findCommandesForLivreur(String username)
-    {
-
-        Livreur livreur = livreurRepository.findLivreurByUsername(username);
-
-        double minDistance = 9999;
-        Livreur livProche = null;
-
-        for (Long id : LivreursCon)
-        {
-            Livreur currentLivreur = livreurRepository.findById(id).orElse(null);
-            if (currentLivreur != null)
-            {
-                double loc = CalculerRoute.calculateRoute(currentLivreur.getLocalisation());
-                if (loc < minDistance)
-                {
-                    minDistance = loc;
-                    livProche = currentLivreur;
-                }
-            }
-        }
-
-        if (livProche != null)
-        {
-            List<Long> nonAffecteesIds = commandeRepository.findCommandeByLivreeAndAffectee(0)
-                    .stream()
-                    .map(Commande::getId)
-                    .collect(Collectors.toList());
-
-            livProche.getCommandeId().addAll(nonAffecteesIds);
-            livreurRepository.save(livProche);
-        }
-
-        List<Commande> listCom = new ArrayList<>();
-        for (Long id : livreur.getCommandeId()) {
-            Commande commande = commandeRepository.findById(id).orElse(null);
-            if (commande != null) {
-                listCom.add(commande);
-            }
-        }
-        System.out.println("list " +listCom);
-        return listCom;
+       }
     }
-
 }
 

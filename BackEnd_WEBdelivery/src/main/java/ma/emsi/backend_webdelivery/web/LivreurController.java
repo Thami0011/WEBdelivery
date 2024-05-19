@@ -1,5 +1,6 @@
 package ma.emsi.backend_webdelivery.web;
 
+import ma.emsi.backend_webdelivery.DTO.LivreurCommandeDTO;
 import ma.emsi.backend_webdelivery.entities.Client;
 import ma.emsi.backend_webdelivery.entities.Commande;
 import ma.emsi.backend_webdelivery.entities.Livreur;
@@ -26,6 +27,8 @@ public class LivreurController
     private LivreurService livreurService;
     @Autowired
     private CommandeRepository commandeRepository;
+
+    // La liste des livreurs connectes
     public static List<Long> LivreursCon=new ArrayList<>();
 
     @PostMapping("/LoginLivreur")
@@ -37,12 +40,9 @@ public class LivreurController
             System.out.println(liveur1.getUsername() + " is connected.");
             liveur1.setLocalisation(calculateLocationForLivreur());
             livreurRepository.save(liveur1);
-            if(liveur1.isDispo())
-            {
-                LivreursCon.add(liveur1.getId());
-            }
-
+            LivreursCon.add(liveur1.getId());
             System.out.println(liveur1.getLocalisation());
+            System.out.println("Livreurs Connectes : " + LivreursCon);
             return ResponseEntity.ok(liveur1);
 
         }
@@ -83,13 +83,30 @@ public class LivreurController
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
+
     @PostMapping("/commandes")
-    public ResponseEntity<List<Commande>> commandes(@RequestBody String username) {
-        List<Commande> commandes = livreurService.findCommandesForLivreur(username);
-        return ResponseEntity.ok(commandes);
+    public ResponseEntity<Commande> commandes(@RequestBody String username) {
+        livreurService.affectercomandesLivreur();
+        System.out.println(username + " has been affected commande " + livreurRepository.findLivreurByUsername(username).getCommandeId());
+        return ResponseEntity.ok(commandeRepository.findCommandesById(livreurRepository.findLivreurByUsername(username).getCommandeId()));
     }
 
 
+    @PostMapping("/confirmerCommande")
+    public ResponseEntity<?> confirmerCommande(@RequestBody LivreurCommandeDTO json) {
+        try {
+            Livreur livreur=livreurRepository.findLivreurByUsername(json.getUsername());
+            livreur.setDispo(true);
+            Commande commande = commandeRepository.findCommandesById(livreur.getCommandeId());
+            commande.setLivree(true);
+            System.out.println("Commande livrée");
+            return ResponseEntity.ok("Livraison Confirmee");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+
+    }
 
 
 }
