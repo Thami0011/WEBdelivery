@@ -39,6 +39,7 @@ const Panier = () => {
 
   return (
     <>
+      <h1 >Votre Panier :</h1>
       <ProductTable />
 
       <MagicButton text="Valider votre commande" onClick={ajouterCommande} />

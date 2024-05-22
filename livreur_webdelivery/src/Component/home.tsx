@@ -18,7 +18,7 @@ const Home = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        filter: "opacity(0.6)",
+        
       }} >
 
       <div

@@ -30,16 +30,19 @@ public class LivreurService
         livreurRepository.save(livreur);
     }
 
-    public void affectercomandesLivreur(){
+    public void affectercomandesLivreur()
+    {
        double minDistance =9999;
        Livreur livProche = null;
-        for (Long id : LivreursCon){
+        for (Long id : LivreursCon)
+        {
            Livreur livreur = livreurRepository.findLivreurById(id);
            if(livreur.isDispo())
            {
                if (CalculerRoute.calculateRoute(livreur.getLocalisation()) < minDistance )
                {
                    minDistance = CalculerRoute.calculateRoute(livreur.getLocalisation());
+                   System.out.println(minDistance);
                    livProche = livreur;
                }
                List<Commande> comdispo = commandeRepository.findCommandesByAffectee(false);

@@ -52,7 +52,7 @@ function LoginForm() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" style={{marginLeft:"150px"}}>
+      <Container component="main" maxWidth="xs" >
         <CssBaseline />
         <Box
           sx={{
