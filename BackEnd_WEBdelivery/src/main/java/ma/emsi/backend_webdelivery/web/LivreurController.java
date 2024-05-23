@@ -93,19 +93,17 @@ public class LivreurController
 
 
     @PostMapping("/confirmerCommande")
-    public ResponseEntity<?> confirmerCommande(@RequestBody LivreurCommandeDTO json) {
-        try {
-            Livreur livreur=livreurRepository.findLivreurByUsername(json.getUsername());
-            livreur.setDispo(true);
-            Commande commande = commandeRepository.findCommandesById(livreur.getCommandeId());
-            commande.setLivree(true);
-            System.out.println("Commande livrée");
-            return ResponseEntity.ok("Livraison Confirmee");
-        }
-        catch (Exception e){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
-        }
-
+    public ResponseEntity<?> confirmerCommande(@RequestBody LivreurCommandeDTO json)
+    {
+        Livreur livreur=livreurRepository.findLivreurByUsername(json.getUsername());
+        Commande commande = commandeRepository.findCommandesById(livreur.getCommandeId());
+        livreur.setDispo(true);
+        commande.setLivree(true);
+        System.out.println(livreur.getId());
+        System.out.println(commande.isLivree());
+        livreurService.affectercomandesLivreur();
+        System.out.println("Commande livrée");
+        return ResponseEntity.ok("Livraison Confirmee");
     }
 
 
